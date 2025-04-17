@@ -17,7 +17,9 @@ namespace Dominio
         {
             _nombre = nombre;
             _documento = documento;
-            _nombre = correoElectronico;
+            _nacionalidad = nacionalidad;
         }
+
+
     }
 }
