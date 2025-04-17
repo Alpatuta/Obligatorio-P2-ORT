@@ -21,5 +21,23 @@ namespace Dominio
             _aeropuertoLlegada = aeropuertoLlegada;
             _distancia = distancia;
         }
+
+        public void ValidarRuta()
+        {
+            if(_aeropuertoLlegada == null)
+            {
+                throw new Exception("Seleccione el aeropuerto de llegada");
+            }
+
+            if(_aeropuertoSalida == null)
+            {
+                throw new Exception("Seleccione el aeropuerto de salida");
+            }
+
+            if(_distancia <= 0) 
+            {
+                throw new Exception("La distancia tiene que ser mayor a cero");
+            }
+        }
     }
 }

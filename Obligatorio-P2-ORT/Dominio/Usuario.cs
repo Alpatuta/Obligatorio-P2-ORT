@@ -16,5 +16,7 @@ namespace Dominio
             _correoElectronico = correoElectronico;
             _contrasenia = contrasenia;
         }
+
+        //Para validar usuarios de cualquier tipo hay que preguntar a la profe.
     }
 }

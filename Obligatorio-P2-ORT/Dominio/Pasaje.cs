@@ -23,5 +23,29 @@ namespace Dominio
             _pasajero = pasajero;
             _equipaje = equipaje;
         }
+
+        public void ValidarPasaje()
+        {
+            if (_pasajero == null)
+            {
+                throw new Exception("El pasaje tiene que tener asigando un pasajero");
+            }
+
+            if(_vuelo == null)
+            {
+                throw new Exception("El pasaje tiene que tener un vuelo asignado");
+            }
+
+            if(_fecha == DateTime.MinValue)
+            {
+                throw new Exception("Ingresar una fecha");
+                //Validar que la fecha corresponda con la frecuencia de vuelo. Preguntar
+            }
+
+            if(_equipaje != 0)
+            {
+                //Preguntarle a la profe validacion de enum
+            }
+        }
     }
 }
