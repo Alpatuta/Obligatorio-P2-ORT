@@ -33,7 +33,7 @@ namespace Dominio
             }
             else
             {
-                Console.WriteLine("Ya existe un aeropuerto con este codigo IATA");
+                throw new Exception("Ya existe un aeropuerto con este codigo IATA");
             }
         }
 
@@ -46,7 +46,33 @@ namespace Dominio
             }
             else
             {
-                Console.WriteLine("Ya existe una ruta con ese id");
+                throw new Exception("Ya existe una ruta con ese id");
+            }
+        }
+
+        public void AltaVuelos(Vuelo vuelo)
+        {
+            vuelo.ValidarVuelo();
+            if (!_vuelos.Contains(vuelo))
+            {
+                _vuelos.Add(vuelo);
+            }
+            else
+            {
+                throw new Exception("Ya existe un vuelo con ese numero de vuelo");
+            }
+        }
+
+        public void AltaPasajes(Pasaje pasaje)
+        {
+            pasaje.ValidarPasaje();
+            if (!_pasajes.Contains(pasaje))
+            {
+                _pasajes.Add(pasaje);
+            }
+            else
+            {
+                throw new Exception("Ya existe un pasaje con ese Id");
             }
         }
     }

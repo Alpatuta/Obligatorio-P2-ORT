@@ -47,5 +47,18 @@ namespace Dominio
                 //Preguntarle a la profe validacion de enum
             }
         }
+
+        public override bool Equals(object? obj)
+        {
+            bool existe = false;
+
+            if(obj != null && obj is Pasaje)
+            {
+                Pasaje pasaje = (Pasaje)obj;
+                existe = pasaje._idPasaje == _idPasaje;
+            }
+
+            return existe;
+        }
     }
 }

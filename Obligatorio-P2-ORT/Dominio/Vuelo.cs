@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Dominio
 {
     public class Vuelo
-    {
+    { 
         private string _numeroVuelo;
         private Frecuencia _frecuencia;
         private Ruta _ruta;
@@ -42,6 +42,19 @@ namespace Dominio
             {
                 //Preguntarle a la profe validacion de enum
             }
+        }
+
+        public override bool Equals(object? obj)
+        {
+            bool existe = false;
+
+            if(obj != null &&  obj is Vuelo)
+            {
+                Vuelo vuelo = (Vuelo)obj;
+                existe = vuelo._numeroVuelo == _numeroVuelo;
+            }
+            
+            return existe;
         }
     }
 }
