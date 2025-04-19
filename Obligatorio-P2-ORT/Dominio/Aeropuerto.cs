@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Aeropuerto
+    public class Aeropuerto
     {
         private string _codigoIATA;
         private string _ciudad;
@@ -43,6 +43,19 @@ namespace Dominio
             {
                 throw new Exception("El costo de las tasas debe ser mayor a cero");
             }
+        }
+
+        public override bool Equals(object? obj)
+        {
+            bool existe = false;
+
+            if (obj != null && obj is Aeropuerto)
+            {
+                Aeropuerto aeropuerto = (Aeropuerto)obj;
+                existe = aeropuerto._codigoIATA == _codigoIATA;
+            }
+            
+            return existe;
         }
     }
 }

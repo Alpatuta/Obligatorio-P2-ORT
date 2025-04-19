@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Avion
+    public class Avion
     {
         private string _fabricante;
         private string _modelo;

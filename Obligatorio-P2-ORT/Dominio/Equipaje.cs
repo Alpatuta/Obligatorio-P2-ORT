@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    enum Equipaje
+    internal enum Equipaje
     {
         Light, // = 0
         Cabina, // = 1

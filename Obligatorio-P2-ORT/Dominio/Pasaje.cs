@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Pasaje
+    public class Pasaje
     {
         private int _idPasaje;
         private static int s_ultimoId;

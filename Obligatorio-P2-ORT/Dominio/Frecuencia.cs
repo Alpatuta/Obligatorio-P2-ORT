@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    enum Frecuencia
+    public enum Frecuencia
     {
         Lunes, // = 0
         Martes, // = 1

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Ruta
+    public class Ruta
     {
         private int _idRuta;
         private static int s_ultimoId = 1;
@@ -38,6 +38,19 @@ namespace Dominio
             {
                 throw new Exception("La distancia tiene que ser mayor a cero");
             }
+        }
+
+        public override bool Equals(object? obj)
+        {
+            bool existe = false;
+
+            if (obj != null && obj is Ruta)
+            {
+                Ruta ruta = (Ruta)obj;
+                existe = ruta._idRuta == _idRuta;
+            }
+
+            return existe;
         }
     }
 }
