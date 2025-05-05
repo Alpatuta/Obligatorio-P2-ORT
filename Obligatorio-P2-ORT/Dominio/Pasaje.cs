@@ -42,10 +42,11 @@ namespace Dominio
                 //Validar que la fecha corresponda con la frecuencia de vuelo. Preguntar
             }
 
-            if(_equipaje != 0)
+            if(_equipaje != Equipaje.Light || _equipaje != Equipaje.Cabina || _equipaje != Equipaje.Bodega)
             {
-                //Preguntarle a la profe validacion de enum
+                throw new Exception("Ingrese el tipo de equipaje");
             }
+
         }
 
         public override bool Equals(object? obj)

@@ -15,5 +15,15 @@ namespace Dominio
         {
             _apodo = apodo;
         }
+
+        public void ValidarAdmin()
+        {
+            base.ValidarUsuario();
+
+            if(string.IsNullOrEmpty(_apodo))
+            {
+                throw new Exception("El apodo no puede ser vacio");
+            }
+        }
     }
 }

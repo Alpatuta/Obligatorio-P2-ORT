@@ -104,7 +104,7 @@ namespace Dominio
 
         public void AltaUsuarioAdministrador(Administrador admin)
         {
-            admin.Validar();
+            admin.ValidarAdmin();
             if (!_usuarios.Contains(admin))
             {
                 _usuarios.Add(admin);

@@ -28,5 +28,18 @@ namespace Dominio
                 throw new Exception("La contraseña no puede estar vacia");
             }
         }
+
+        public override bool Equals(object? obj)
+        {
+            bool sonIguales = false;
+
+            if (obj != null && obj is Usuario) 
+            { 
+                Usuario usuario = (Usuario)obj;
+                sonIguales = _correoElectronico ==  usuario._correoElectronico;
+            }
+
+            return sonIguales;
+        }
     }
 }
