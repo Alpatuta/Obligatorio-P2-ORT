@@ -17,6 +17,16 @@ namespace Dominio
             _contrasenia = contrasenia;
         }
 
-        //Para validar usuarios de cualquier tipo hay que preguntar a la profe.
+        public void ValidarUsuario()
+        {
+            if (string.IsNullOrEmpty(_correoElectronico))
+            {
+                throw new Exception("El correo electronico no puede estar vacio");
+            }
+            if (string.IsNullOrEmpty(_contrasenia))
+            {
+                throw new Exception("La contraseña no puede estar vacia");
+            }
+        }
     }
 }
