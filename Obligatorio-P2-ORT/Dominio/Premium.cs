@@ -10,11 +10,8 @@ namespace Dominio
     {
         private int _puntos;
 
-        public Premium(string correoElectronico, string contrasenia, string nombre, string documento, string nacionalidad, int puntos) 
-            : base(correoElectronico, contrasenia, nombre, documento, nacionalidad) 
-        { 
-            _puntos = puntos;
-        }
+        public Premium(string correoElectronico, string contrasenia, string nombre, string documento, string nacionalidad) 
+            : base(correoElectronico, contrasenia, nombre, documento, nacionalidad) { }
 
         public void Validar()
         {

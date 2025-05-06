@@ -8,6 +8,8 @@ namespace Dominio
 {
     public class Avion
     {
+        private int _id;
+        private static int s_ultId = 1;
         private string _fabricante;
         private string _modelo;
         private int _cantAsientos;
@@ -15,13 +17,16 @@ namespace Dominio
         private double _costoOperacion;
 
         public Avion(string fabricante, string modelo, int cantAsientos, int alcance, double costoOperacion) 
-        { 
+        {
+            _id = s_ultId ++;
             _fabricante = fabricante;
             _modelo = modelo;
             _cantAsientos = cantAsientos;
             _alcance = alcance;
             _costoOperacion = costoOperacion;
         }
+
+        public int Id { get { return _id; } }
 
         public void ValidarAvion()
         {

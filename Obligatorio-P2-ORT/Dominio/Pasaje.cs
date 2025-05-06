@@ -24,6 +24,8 @@ namespace Dominio
             _equipaje = equipaje;
         }
 
+        public int IdPasaje { get { return _idPasaje; } }
+
         public void ValidarPasaje()
         {
             if (_pasajero == null)

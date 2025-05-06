@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,8 @@ namespace Dominio
             _nacionalidad = nacionalidad;
         }
 
+        public string Cedula { get  { return _documento; } }
+
         public void ValidarCliente()
         {
             base.ValidarUsuario();
@@ -35,6 +38,15 @@ namespace Dominio
             if (string.IsNullOrEmpty(_nacionalidad))
             {
                 throw new Exception("La nacionalidad no puede estar vacia");
+            }
+        }
+
+        public bool EsOcasional(Cliente cliente, string documento)
+        {
+            bool esOcasional = false;
+            if (cliente._documento == documento)
+            {
+                
             }
         }
     }

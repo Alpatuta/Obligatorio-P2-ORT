@@ -21,6 +21,8 @@ namespace Dominio
             _avion = avion;
         }
 
+        public string NumeroVuelo { get { return _numeroVuelo; } }
+
         public void ValidarVuelo()
         {
             if(string.IsNullOrEmpty(_numeroVuelo))

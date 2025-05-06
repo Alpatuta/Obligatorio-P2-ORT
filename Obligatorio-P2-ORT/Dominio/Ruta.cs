@@ -22,6 +22,8 @@ namespace Dominio
             _distancia = distancia;
         }
 
+        public int IdRuta { get { return _idRuta; } }
+
         public void ValidarRuta()
         {
             if(_aeropuertoLlegada == null)

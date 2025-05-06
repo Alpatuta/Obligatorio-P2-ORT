@@ -21,6 +21,8 @@ namespace Dominio
             _costoTasas = costoTasas;
         }
 
+        public string CodigoIata { get { return _codigoIATA; } }
+
         public void ValidarAeropuerto() 
         { 
             if(string.IsNullOrEmpty(_codigoIATA) || _codigoIATA.Length != 3)

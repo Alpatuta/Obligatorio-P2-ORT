@@ -17,6 +17,8 @@ namespace Dominio
             _contrasenia = contrasenia;
         }
 
+        public string Mail { get {  return _correoElectronico; } }
+
         public void ValidarUsuario()
         {
             if (string.IsNullOrEmpty(_correoElectronico))
@@ -28,6 +30,7 @@ namespace Dominio
                 throw new Exception("La contraseña no puede estar vacia");
             }
         }
+
 
         public override bool Equals(object? obj)
         {

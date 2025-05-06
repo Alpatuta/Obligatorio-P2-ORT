@@ -19,7 +19,9 @@ namespace Dominio
         public void Validar()
         {
             base.ValidarCliente();
-            //Se pide el dato de si es elegible??????? o parte de una funcionalidad?????
+            
         }
+
+
     }
 }

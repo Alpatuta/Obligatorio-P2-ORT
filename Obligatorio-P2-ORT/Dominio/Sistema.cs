@@ -15,6 +15,7 @@ namespace Dominio
         private List<Avion> _aviones = new List<Avion>();
         private List<Aeropuerto> _aeropuertos = new List<Aeropuerto>();
 
+        // ALTAS DE OBJETOS
         public void AltaAviones(Avion avion)
         {
             avion.ValidarAvion();
@@ -113,6 +114,143 @@ namespace Dominio
             {
                 throw new Exception("Ya existe ese usuario administrador");
             }
+        }
+
+        // BUSQUEDAS DE OBJETOS
+        public Aeropuerto BuscarAeropuerto(string codigoIata)
+        {
+            Aeropuerto aeropuerto = null;
+            int i = 0;
+
+            while (i < _aeropuertos.Count && aeropuerto == null)
+            {
+                if (_aeropuertos[i].CodigoIata == codigoIata)
+                {
+                    aeropuerto = _aeropuertos[i];
+                }
+
+                i++;
+            }
+
+            return aeropuerto;
+        }
+
+        public Avion BuscarAvion(int id) 
+        { 
+            Avion avion = null;
+            int i = 0;
+
+            while (i < _aviones.Count && avion == null)
+            {
+                if (_aviones[i].Id == id)
+                {
+                    avion = _aviones[i];
+                }
+
+                i++;
+            }
+
+            return avion;
+        }
+
+        public Ruta BuscarRuta(int idRuta)
+        {
+            Ruta ruta = null;
+            int i = 0;
+
+            while (i < _rutas.Count && ruta == null)
+            {
+                if (_rutas[i].IdRuta == idRuta)
+                {
+                    ruta = _rutas[i];
+                }
+                i++;
+            }
+
+            return ruta;
+        }
+
+        public Vuelo BuscarVuelo(string numVuelo)
+        {
+            Vuelo vuelo = null;
+            int i = 0;
+
+            while (i < _vuelos.Count && vuelo == null)
+            {
+                if ( _vuelos[i].NumeroVuelo == numVuelo)
+                {
+                    vuelo = _vuelos[i];
+                }
+
+                i++;
+            }
+
+            return vuelo;
+        }
+
+        public Pasaje BuscarPasaje(int idPasaje)
+        {
+            Pasaje pasaje = null;
+            int i = 0;
+
+            while (i < _pasajes.Count && pasaje == null)
+            {
+                if (_pasajes[i].IdPasaje  == idPasaje)
+                {
+                    pasaje = _pasajes[i];
+                }
+
+                i++;
+            }
+
+            return pasaje;
+        }
+
+        public Usuario BuscarUsuarioCliente (string mail)
+        {
+            Usuario usuario = null;
+            int i = 0;
+
+            while (i < _usuarios.Count && usuario == null)
+            {
+                if (_usuarios[i] is Cliente && _usuarios[i].Mail == mail)
+                {
+                    usuario = _usuarios[i];
+                }
+
+                i++;
+            }
+
+            return usuario;
+        }
+
+        // PRECARGAS
+
+        public void PrecargaUsuario()
+        {
+            PrecargaUsuariosAdmin();
+            PrecargaUsuarioClientePremium();
+        }
+
+        private void PrecargaUsuariosAdmin()
+        {
+            AltaUsuarioAdministrador(new Administrador("admin1@gmail.com", "1234", "admin1"));
+            AltaUsuarioAdministrador(new Administrador("admin2@gmail.com", "1234", "admin2"));
+        }
+
+        private void PrecargaUsuarioClientePremium()
+        {
+            AltaUsuarioClientePremium(new Premium("premium1@gmail.com", "1234", "premium1", "12345678", "Uruguay"));
+            AltaUsuarioClientePremium(new Premium("premium2@gmail.com", "1234", "premium2", "23456789", "España"));
+            AltaUsuarioClientePremium(new Premium("premium3@gmail.com", "1234", "premium3", "34567890", "España"));
+            AltaUsuarioClientePremium(new Premium("premium4@gmail.com", "1234", "premium4", "45678901", "Japon"));
+            AltaUsuarioClientePremium(new Premium("premium5@gmail.com", "1234", "premium5", "56789012", "Uruguay"));
+        }
+
+        private void PrecargaUsuarioClienteOcasional()
+        {
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional1@gmail.com", "1234", "ocasional1", "67890123", "Uruguay", true));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional2@gmail.com", "1234", "ocasional2", "78901234", "Uruguay", false));
         }
     }
 }
