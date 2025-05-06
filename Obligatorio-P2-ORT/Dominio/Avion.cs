@@ -9,7 +9,7 @@ namespace Dominio
     public class Avion
     {
         private int _id;
-        private static int s_ultId = 1;
+        private static int s_ultId = 0;
         private string _fabricante;
         private string _modelo;
         private int _cantAsientos;

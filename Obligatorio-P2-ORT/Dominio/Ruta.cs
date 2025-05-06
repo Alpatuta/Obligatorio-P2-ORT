@@ -9,7 +9,7 @@ namespace Dominio
     public class Ruta
     {
         private int _idRuta;
-        private static int s_ultimoId = 1;
+        private static int s_ultimoId = 0;
         private Aeropuerto _aeropuertoSalida;
         private Aeropuerto _aeropuertoLlegada;
         private int _distancia;
