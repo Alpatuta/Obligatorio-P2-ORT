@@ -96,6 +96,7 @@ namespace Dominio
             if (!_usuarios.Contains(ocasional))
             {
                 _usuarios.Add(ocasional);
+                
             }
             else
             {
@@ -263,7 +264,7 @@ namespace Dominio
 
         private void PrecargaAviones()
         {
-            AltaAviones(new Avion("Boeing", "737 MAX 8", 178, 6570, 2600.50));
+            AltaAviones(new Avion("Boeing", "737MAX8", 178, 6570, 2600.50));
             AltaAviones(new Avion("Airbus", "A320neo", 180, 6300, 2500.75));
             AltaAviones(new Avion("Embraer", "E195-E2", 132, 4815, 2100.00));
             AltaAviones(new Avion("Bombardier", "CRJ900", 90, 2956, 1800.35));
@@ -389,6 +390,46 @@ namespace Dominio
             AltaPasajes(new Pasaje(BuscarVuelo("AR124"), new DateTime(2025, 06, 24), BuscarCliente("ocasional3@gmail.com"), Equipaje.Light));
             AltaPasajes(new Pasaje(BuscarVuelo("AR125"), new DateTime(2025, 06, 25), BuscarCliente("ocasional5@gmail.com"), Equipaje.Cabina));
 
+        }
+
+
+        //Mostrar clientes
+        public string ClientesString()
+        {
+            string datosCliente = "";
+
+            foreach(Usuario usu in _usuarios)
+            {
+                if(usu is Cliente)
+                {
+                    datosCliente += usu.ToString();
+                }
+            }
+
+            return datosCliente;
+        }
+
+        //Mostrar vuelos determinados
+        public string ListadoVuelosIATA(string codigo)
+        {
+            string vuelosIATA = "";
+
+            if(codigo.Length == 3 && BuscarAeropuerto(codigo) != null)
+            {
+                foreach (Vuelo vuelo in _vuelos)
+                {
+                    if (vuelo.PerteneceRuta(codigo))
+                    {
+                        vuelosIATA += vuelo.ToString();
+                    }
+                }
+            }
+            else
+            {
+                throw new Exception("Codigo IATA invalido");
+            }
+
+            return vuelosIATA;
         }
     }
 }

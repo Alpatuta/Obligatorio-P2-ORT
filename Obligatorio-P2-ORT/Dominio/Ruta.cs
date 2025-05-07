@@ -54,5 +54,22 @@ namespace Dominio
 
             return existe;
         }
+
+        public bool estaEnLaRuta(string codigoIata)
+        {
+            bool estaEnRuta = false;
+
+            if(_aeropuertoSalida.CodigoIata == codigoIata || _aeropuertoLlegada.CodigoIata == codigoIata)
+            {
+                estaEnRuta = true;
+            }
+
+            return estaEnRuta;
+        }
+
+        public string infoCodigoIata()
+        {
+            return $"{_aeropuertoSalida.CodigoIata} - {_aeropuertoLlegada.CodigoIata}";
+        }
     }
 }

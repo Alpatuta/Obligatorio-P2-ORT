@@ -18,5 +18,10 @@ namespace Dominio
             //Los puentos serian static y empezarian en 0?? o se le asignan como dato solicitado??
             base.ValidarCliente();
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + " - " + _puntos + "\n";
+        }
     } 
 }

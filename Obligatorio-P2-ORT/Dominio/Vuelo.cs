@@ -58,5 +58,15 @@ namespace Dominio
             
             return existe;
         }
+
+        public bool PerteneceRuta(string codigoIata)
+        {
+            return _ruta.estaEnLaRuta(codigoIata);
+        }
+
+        public override string ToString()
+        {
+            return $"{_numeroVuelo} - {_avion.Modelo} - {_ruta.infoCodigoIata()} - {_frecuencia} \n ";
+        }
     }
 }

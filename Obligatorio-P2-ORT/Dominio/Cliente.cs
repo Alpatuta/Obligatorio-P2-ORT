@@ -51,5 +51,10 @@ namespace Dominio
 
             return esOcasional;
         }
+
+        public override string ToString()
+        {
+            return _nombre + " - " + base.ToString() + _nacionalidad;
+        }
     }
 }
