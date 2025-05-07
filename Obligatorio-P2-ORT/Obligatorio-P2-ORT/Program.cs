@@ -70,7 +70,7 @@ namespace Obligatorio_P2_ORT
 
         static void MostrarClientes()
         {
-            Console.WriteLine("1");
+            s.PrecargaGeneral();
         }
 
         static void ListadoAeropuertos()
