@@ -46,8 +46,10 @@ namespace Dominio
             bool esOcasional = false;
             if (cliente._documento == documento)
             {
-                
+                esOcasional = true;
             }
+
+            return esOcasional;
         }
     }
 }
