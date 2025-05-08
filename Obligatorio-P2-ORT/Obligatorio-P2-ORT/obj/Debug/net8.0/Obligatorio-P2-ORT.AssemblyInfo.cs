@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Obligatorio-P2-ORT")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c0bceca50a9b8f9a5393cc4c587877771bfca6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+215a98226461e3420cf40a17abbdae3faf663c37")]
 [assembly: System.Reflection.AssemblyProductAttribute("Obligatorio-P2-ORT")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Obligatorio-P2-ORT")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

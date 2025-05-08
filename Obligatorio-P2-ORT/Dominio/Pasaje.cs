@@ -44,7 +44,7 @@ namespace Dominio
                 //Validar que la fecha corresponda con la frecuencia de vuelo. Preguntar
             }
 
-            if(_equipaje != Equipaje.Light || _equipaje != Equipaje.Cabina || _equipaje != Equipaje.Bodega)
+            if(_equipaje != Equipaje.Light && _equipaje != Equipaje.Cabina && _equipaje != Equipaje.Bodega)
             {
                 throw new Exception("Ingrese el tipo de equipaje");
             }
