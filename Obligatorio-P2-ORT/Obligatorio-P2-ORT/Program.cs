@@ -27,11 +27,16 @@ namespace Obligatorio_P2_ORT
 
         static void Menu()
         {
+            Console.WriteLine(" ----------------");
+            Console.WriteLine("| MENÚ PRINCIPAL |");
+            Console.WriteLine(" ----------------");
+
             Console.WriteLine("1- Mostrar clientes");
             Console.WriteLine("2- Listado aeropuertos dado un codigo");
             Console.WriteLine("3- Alta cliente ocasional");
             Console.WriteLine("4- Listado pasajes dado dos fechas");
             Console.WriteLine("0- Salir");
+            Console.WriteLine("");
         }
 
         static void SeleccionarOpcion(int opcion)
@@ -58,6 +63,10 @@ namespace Obligatorio_P2_ORT
 
         static void CrearCliente ()
         {
+            Console.WriteLine("");
+            Console.WriteLine("----------------Registro Cliente----------------");
+            Console.WriteLine("");
+
             try
             {
                 Console.WriteLine("Ingrese su nombre");
@@ -88,8 +97,11 @@ namespace Obligatorio_P2_ORT
                 Ocasional ocasional = new Ocasional(correo, contrasenia, nombre, documento, nacionalidad, elegible);
                 s.AltaUsuarioClienteOcasional(ocasional);
 
+                Console.WriteLine("");
                 Console.WriteLine("Cliente creado con exito");
-            }catch (Exception ex) 
+                Console.WriteLine("");
+            }
+            catch (Exception ex) 
             {
                 Console.WriteLine(ex.Message);
                     
@@ -100,18 +112,34 @@ namespace Obligatorio_P2_ORT
 
         static void MostrarClientes() 
         {
+            Console.WriteLine("");
+            Console.WriteLine("----------------Listado de Clientes----------------");
+            Console.WriteLine("");
+
             Console.WriteLine(s.ClientesString());
         }
 
         static void ListadoVuelos()
         {
+            Console.WriteLine("");
+            Console.WriteLine("----------------Listado de Vuelos----------------");
+            Console.WriteLine("");
+
             try
             {
 
-                Console.WriteLine("\n Codigos disponibles: JFK - LAX - LHR - CDG - FRA - NRT - SYD - GRU - EZE - MEX - MAD - FCO - AMS - BCN - YYZ - ATL - DXB - SIN - SCL - MVD");
-
+                Console.WriteLine("Codigos disponibles: ");
+                Console.WriteLine("JFK - LAX - LHR - CDG - FRA - NRT - SYD");
+                Console.WriteLine("GRU - EZE - MEX - MAD - FCO - AMS - BCN");
+                Console.WriteLine("YYZ - ATL - DXB - SIN - SCL - MVD");
+                
+                Console.WriteLine("");
                 Console.WriteLine("Ingrese un codigo de aeropuerto");
                 string codigo = Console.ReadLine().ToUpper();
+
+                Console.WriteLine("");
+                Console.WriteLine($"-Vuelos para {codigo.ToUpper()}-");
+                Console.WriteLine("");
 
                 Console.WriteLine(s.ListadoVuelosIATA(codigo));
             }catch(Exception ex)
@@ -127,13 +155,26 @@ namespace Obligatorio_P2_ORT
 
         static void ListadoPasajes() 
         {
+            Console.WriteLine("");
+            Console.WriteLine("----------------Listado de Pasajes----------------");
+            Console.WriteLine("");
+
             Console.WriteLine("Ingrese la fecha de inicio");
             DateTime.TryParse(Console.ReadLine(), out DateTime fechaUno);
+            Console.WriteLine("");
 
             Console.WriteLine("Ingrese la fecha final");
             DateTime.TryParse(Console.ReadLine(), out DateTime fechaDos);
+            Console.WriteLine("");
+
+            if (s.PasajesEntreFechas(fechaUno, fechaDos) == "")
+            {
+                Console.WriteLine("No hay pasajes entre esas fechas");
+            } else
+            {
+                Console.WriteLine(s.PasajesEntreFechas(fechaUno, fechaDos));
+            }
             
-            Console.WriteLine(s.PasajesEntreFechas(fechaUno, fechaDos));
         }
     }
 }

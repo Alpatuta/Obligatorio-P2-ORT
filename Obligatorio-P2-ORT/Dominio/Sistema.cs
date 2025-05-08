@@ -367,41 +367,41 @@ namespace Dominio
 
         private void PrecargasPasajes()
         {
-            AltaPasajes(new Pasaje(BuscarVuelo("AA1001"), new DateTime(2025, 5, 12), BuscarCliente("premium1@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AM2342"), new DateTime(2025, 5, 13), BuscarCliente("premium2@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AC9982"), new DateTime(2025, 5, 14), BuscarCliente("premium3@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR7821"), new DateTime(2025, 5, 15), BuscarCliente("premium4@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("LA1023"), new DateTime(2025, 5, 16), BuscarCliente("premium5@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AA1001"), new DateTime(2025, 05, 12), BuscarCliente("premium1@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("AM2342"), new DateTime(2025, 05, 13), BuscarCliente("premium2@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AC9982"), new DateTime(2025, 05, 14), BuscarCliente("premium3@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("AR7821"), new DateTime(2025, 05, 15), BuscarCliente("premium4@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("LA1023"), new DateTime(2025, 05, 16), BuscarCliente("premium5@gmail.com"), Equipaje.Cabina));
 
-            AltaPasajes(new Pasaje(BuscarVuelo("LA1234"), new DateTime(2025, 5, 17), BuscarCliente("ocasional1@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("G36012"), new DateTime(2025, 5, 18), BuscarCliente("ocasional2@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("UY5678"), new DateTime(2025, 5, 19), BuscarCliente("ocasional3@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("UY3421"), new DateTime(2025, 5, 20), BuscarCliente("ocasional4@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("IB3000"), new DateTime(2025, 5, 21), BuscarCliente("ocasional5@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("LA1234"), new DateTime(2025, 05, 17), BuscarCliente("ocasional1@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("G36012"), new DateTime(2025, 05, 18), BuscarCliente("ocasional2@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("UY5678"), new DateTime(2025, 05, 19), BuscarCliente("ocasional3@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("UY3421"), new DateTime(2025, 05, 20), BuscarCliente("ocasional4@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("IB3000"), new DateTime(2025, 05, 21), BuscarCliente("ocasional5@gmail.com"), Equipaje.Light));
 
-            AltaPasajes(new Pasaje(BuscarVuelo("AF1024"), new DateTime(2025, 5, 22), BuscarCliente("premium1@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AZ4500"), new DateTime(2025, 5, 23), BuscarCliente("premium2@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("IB3210"), new DateTime(2025, 5, 24), BuscarCliente("premium3@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("KL2100"), new DateTime(2025, 5, 25), BuscarCliente("premium4@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("KL2190"), new DateTime(2025, 5, 26), BuscarCliente("premium5@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("AF1024"), new DateTime(2025, 05, 22), BuscarCliente("premium1@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AZ4500"), new DateTime(2025, 05, 23), BuscarCliente("premium2@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("IB3210"), new DateTime(2025, 05, 24), BuscarCliente("premium3@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("KL2100"), new DateTime(2025, 05, 25), BuscarCliente("premium4@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("KL2190"), new DateTime(2025, 05, 26), BuscarCliente("premium5@gmail.com"), Equipaje.Bodega));
 
-            AltaPasajes(new Pasaje(BuscarVuelo("BA1102"), new DateTime(2025, 5, 27), BuscarCliente("ocasional1@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("BA1203"), new DateTime(2025, 5, 28), BuscarCliente("ocasional2@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AF4530"), new DateTime(2025, 5, 29), BuscarCliente("ocasional3@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("LA2201"), new DateTime(2025, 5, 30), BuscarCliente("ocasional4@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AM9999"), new DateTime(2025, 5, 31), BuscarCliente("ocasional5@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("BA1102"), new DateTime(2025, 05, 27), BuscarCliente("ocasional1@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("BA1203"), new DateTime(2025, 05, 28), BuscarCliente("ocasional2@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AF4530"), new DateTime(2025, 05, 29), BuscarCliente("ocasional3@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("LA2201"), new DateTime(2025, 05, 30), BuscarCliente("ocasional4@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("AM9999"), new DateTime(2025, 05, 31), BuscarCliente("ocasional5@gmail.com"), Equipaje.Cabina));
 
-            AltaPasajes(new Pasaje(BuscarVuelo("DL5670"), new DateTime(2025, 6, 1), BuscarCliente("premium1@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("DL9087"), new DateTime(2025, 6, 2), BuscarCliente("premium2@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AC3388"), new DateTime(2025, 6, 3), BuscarCliente("premium3@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("LH6742"), new DateTime(2025, 6, 4), BuscarCliente("premium4@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("SQ9001"), new DateTime(2025, 6, 5), BuscarCliente("premium5@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("DL5670"), new DateTime(2025, 06, 1), BuscarCliente("premium1@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("DL9087"), new DateTime(2025, 06, 2), BuscarCliente("premium2@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("AC3388"), new DateTime(2025, 06, 3), BuscarCliente("premium3@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("LH6742"), new DateTime(2025, 06, 4), BuscarCliente("premium4@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("SQ9001"), new DateTime(2025, 06, 5), BuscarCliente("premium5@gmail.com"), Equipaje.Light));
 
-            AltaPasajes(new Pasaje(BuscarVuelo("EK3021"), new DateTime(2025, 6, 6), BuscarCliente("ocasional1@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("EK5000"), new DateTime(2025, 6, 7), BuscarCliente("ocasional2@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AA4321"), new DateTime(2025, 6, 8), BuscarCliente("ocasional3@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("QF9988"), new DateTime(2025, 6, 9), BuscarCliente("ocasional4@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AM8800"), new DateTime(2025, 6, 10), BuscarCliente("ocasional5@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("EK3021"), new DateTime(2025, 06, 6), BuscarCliente("ocasional1@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("EK5000"), new DateTime(2025, 06, 7), BuscarCliente("ocasional2@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("AA4321"), new DateTime(2025, 06, 8), BuscarCliente("ocasional3@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("QF9988"), new DateTime(2025, 06, 9), BuscarCliente("ocasional4@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AM8800"), new DateTime(2025, 06, 10), BuscarCliente("ocasional5@gmail.com"), Equipaje.Bodega));
 
         }
 
@@ -467,14 +467,14 @@ namespace Dominio
                     {
                         datosPasajes += pasaje.ToString();
                     }
-                    else
-                    {
-                        if (pasaje.Fecha <= fechaUno && pasaje.Fecha >= fechaDos)
-                        {
-                            datosPasajes += pasaje.ToString();
-                        }
-                    }
                 }
+                else
+                {
+                    if (pasaje.Fecha <= fechaUno && pasaje.Fecha >= fechaDos)
+                    {
+                        datosPasajes += pasaje.ToString();
+                    }
+                }   
             }
             return datosPasajes;
         }
