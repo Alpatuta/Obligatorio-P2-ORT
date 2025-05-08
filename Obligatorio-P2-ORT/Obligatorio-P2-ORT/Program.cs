@@ -145,7 +145,15 @@ namespace Obligatorio_P2_ORT
             Console.WriteLine("----------------Listado de Clientes----------------");
             Console.WriteLine("");
 
-            Console.WriteLine(s.ClientesString());
+            try
+            {
+                Console.WriteLine(s.ClientesString());
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine("No hay clientes por el momento");
+            }
+           
         }
 
         static void ListadoVuelos()
@@ -170,7 +178,13 @@ namespace Obligatorio_P2_ORT
                 Console.WriteLine($"-Vuelos para {codigo.ToUpper()}-");
                 Console.WriteLine("");
 
-                Console.WriteLine(s.ListadoVuelosIATA(codigo));
+                if( codigo != "")
+                {
+                    Console.WriteLine(s.ListadoVuelosIATA(codigo));
+                }else
+                {
+                    Console.WriteLine("El codigo no puede ser vacio");
+                }
             }catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
@@ -191,13 +205,20 @@ namespace Obligatorio_P2_ORT
             DateTime.TryParse(Console.ReadLine(), out DateTime fechaDos);
             Console.WriteLine("");
 
-            if (s.PasajesEntreFechas(fechaUno, fechaDos) == "")
+            if(fechaUno == DateTime.MinValue || fechaDos == DateTime.MinValue)
+            {
+                Console.WriteLine("Las fechas no pueden ser vacias");
+            }
+            else if (s.PasajesEntreFechas(fechaUno, fechaDos) == "")
             {
                 Console.WriteLine("No hay pasajes entre esas fechas");
-            } else
+            }
+            else
             {
                 Console.WriteLine(s.PasajesEntreFechas(fechaUno, fechaDos));
             }
+
+
         }
     }
 }
