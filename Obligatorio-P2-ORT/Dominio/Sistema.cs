@@ -15,6 +15,10 @@ namespace Dominio
         private List<Avion> _aviones = new List<Avion>();
         private List<Aeropuerto> _aeropuertos = new List<Aeropuerto>();
 
+        public Sistema()
+        {
+            PrecargaGeneral();
+        }
         // ALTAS DE OBJETOS
         public void AltaAviones(Avion avion)
         {

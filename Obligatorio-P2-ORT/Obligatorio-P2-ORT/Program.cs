@@ -5,15 +5,7 @@ namespace Obligatorio_P2_ORT
     {
         private static Sistema s = new Sistema();
         static void Main(string[] args)
-        {
-            try
-            {
-                s.PrecargaGeneral();
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            
+        {   
             int opcion = -1;
             while (opcion != 0) 
             {

@@ -46,6 +46,8 @@ namespace Dominio
                 {
                     tiene = true;
                 }
+
+                i++;
             }
 
             return tiene;
