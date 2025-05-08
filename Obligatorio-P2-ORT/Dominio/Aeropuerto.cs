@@ -28,7 +28,7 @@ namespace Dominio
             if(string.IsNullOrEmpty(_codigoIATA) || _codigoIATA.Length != 3)
             {
                 throw new Exception("El codigo IATA debe ser de 3 letras de largo");
-                //Validar que sean letras nomas, pregunatrle a la profe.
+                
             }
 
             if (string.IsNullOrEmpty(_ciudad))
