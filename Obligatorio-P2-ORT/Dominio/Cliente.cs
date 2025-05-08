@@ -29,21 +29,9 @@ namespace Dominio
         {
             base.ValidarUsuario();
 
-            if (string.IsNullOrEmpty(_documento))
-            {
-                throw new Exception("El documento no puede estar vacio");
-            }
             if (_documento.Length != 8)
             {
                 throw new Exception("El documento tiene que ser de 8 digitos");
-            }
-            if (string.IsNullOrEmpty(_nombre))
-            {
-                throw new Exception("El nombre no puede estar vacio");
-            }
-            if (string.IsNullOrEmpty(_nacionalidad))
-            {
-                throw new Exception("La nacionalidad no puede estar vacia");
             }
         }
 

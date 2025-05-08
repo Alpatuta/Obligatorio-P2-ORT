@@ -21,17 +21,9 @@ namespace Dominio
 
         public void ValidarUsuario()
         {
-            if (string.IsNullOrEmpty(_correoElectronico))
-            {
-                throw new Exception("El correo electronico no puede estar vacio");
-            }
             if (!TieneArroba(_correoElectronico))
             {
                 throw new Exception("El correo electronico debe contener un arroba");
-            }
-            if (string.IsNullOrEmpty(_contrasenia))
-            {
-                throw new Exception("La contraseña no puede estar vacia");
             }
         }
 

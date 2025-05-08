@@ -64,17 +64,53 @@ namespace Obligatorio_P2_ORT
                 Console.WriteLine("Ingrese su nombre");
                 string nombre = Console.ReadLine();
 
+                while (nombre == null)
+                {
+                    Console.WriteLine("El nombre no puede ser vacio");
+                    Console.WriteLine("");
+                    Console.WriteLine("Ingrese su nombre");
+                    nombre = Console.ReadLine();
+                }
+
                 Console.WriteLine("Ingrese su contraseña");
                 string contrasenia = Console.ReadLine();
+
+                while (contrasenia == null)
+                {
+                    Console.WriteLine("La contraseña no puede estar vacia");
+                    Console.WriteLine("Ingrese su contraseña");
+                    contrasenia = Console.ReadLine();
+                }
 
                 Console.WriteLine("Ingrese su correo electronico");
                 string correo = Console.ReadLine();
 
+                while (correo == null)
+                {
+                    Console.WriteLine("El correo no puede estar vacio");
+                    Console.WriteLine("Ingrese su correo electronico");
+                    correo = Console.ReadLine();
+                }
+
                 Console.WriteLine("Ingrese su documento");
                 string documento = Console.ReadLine();
 
+                while (documento == null)
+                {
+                    Console.WriteLine("El documento no puede estar vacio");
+                    Console.WriteLine("Ingrese su documento");
+                    documento = Console.ReadLine();
+                }
+
                 Console.WriteLine("Ingrese su nacionalidad");
                 string nacionalidad = Console.ReadLine();
+
+                while (nacionalidad == null)
+                {
+                    Console.WriteLine("La nacionalidad no puede ser vacia");
+                    Console.WriteLine("Ingrese su nacionalidad");
+                    nacionalidad = Console.ReadLine();
+                }
 
                 Random random = new Random();
 

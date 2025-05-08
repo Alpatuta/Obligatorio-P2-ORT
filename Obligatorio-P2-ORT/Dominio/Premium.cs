@@ -15,7 +15,6 @@ namespace Dominio
 
         public void Validar()
         {
-            //Los puentos serian static y empezarian en 0?? o se le asignan como dato solicitado??
             base.ValidarCliente();
         }
 

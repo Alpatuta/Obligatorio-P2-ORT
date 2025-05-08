@@ -23,7 +23,6 @@ namespace Dominio
         public void Validar()
         {
             base.ValidarCliente();
-            
         }
 
         public override string ToString()
