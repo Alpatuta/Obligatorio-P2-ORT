@@ -106,10 +106,11 @@ namespace Obligatorio_P2_ORT
                 Console.WriteLine(ex.Message);
                     
             }
-
-           
         }
-
+        static void AltaClienteOcasional()
+        {
+            CrearCliente();
+        }
         static void MostrarClientes() 
         {
             Console.WriteLine("");
@@ -148,11 +149,6 @@ namespace Obligatorio_P2_ORT
             }
         }
 
-        static void AltaClienteOcasional()
-        {
-            CrearCliente();
-        }
-
         static void ListadoPasajes() 
         {
             Console.WriteLine("");
@@ -174,7 +170,6 @@ namespace Obligatorio_P2_ORT
             {
                 Console.WriteLine(s.PasajesEntreFechas(fechaUno, fechaDos));
             }
-            
         }
     }
 }

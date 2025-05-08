@@ -25,12 +25,31 @@ namespace Dominio
             {
                 throw new Exception("El correo electronico no puede estar vacio");
             }
+            if (!TieneArroba(_correoElectronico))
+            {
+                throw new Exception("El correo electronico debe contener un arroba");
+            }
             if (string.IsNullOrEmpty(_contrasenia))
             {
                 throw new Exception("La contraseña no puede estar vacia");
             }
         }
 
+        private bool TieneArroba(string mail)
+        {
+            bool tiene = false;
+            int i = 0;
+
+            while (i < mail.Length && tiene == false)
+            {
+                if (mail[i] == '@')
+                {
+                    tiene = true;
+                }
+            }
+
+            return tiene;
+        }
 
         public override bool Equals(object? obj)
         {
