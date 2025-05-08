@@ -25,24 +25,29 @@ namespace Dominio
 
         public void ValidarVuelo()
         {
-            if(string.IsNullOrEmpty(_numeroVuelo))
+            if (string.IsNullOrEmpty(_numeroVuelo))
             {
                 throw new Exception("El numero de vuelo no puede ser vacio");
             }
 
-            if(_ruta == null)
+            if (_ruta == null)
             {
                 throw new Exception("El vuelo debe tener asignada una ruta");
             }
 
-            if(_avion == null)
+            if (_avion == null)
             {
                 throw new Exception("El vuelo debe tener un avion asignado");
             }
 
-            if(_frecuencia != 0)
+            if (_avion.Alcance < _ruta.Distancia)
             {
-                //Preguntarle a la profe validacion de enum
+                throw new Exception("El alcance del avion tiene que ser mayor o igual a la distancia de la ruta");
+            }
+
+            if((int)_frecuencia < 0 || (int)_frecuencia > 6)
+            {
+                throw new Exception("La frecuencia no es valida");
             }
         }
 
@@ -57,6 +62,16 @@ namespace Dominio
             }
             
             return existe;
+        }
+
+        public bool PerteneceRuta(string codigoIata)
+        {
+            return _ruta.estaEnLaRuta(codigoIata);
+        }
+
+        public override string ToString()
+        {
+            return $"{_numeroVuelo} - {_avion.Modelo} - {_ruta.infoCodigoIata()} - {_frecuencia} \n ";
         }
     }
 }

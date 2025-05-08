@@ -23,6 +23,8 @@ namespace Dominio
 
         public string Cedula { get  { return _documento; } }
 
+        public string Nombre { get { return _nombre; } }
+
         public void ValidarCliente()
         {
             base.ValidarUsuario();
@@ -50,6 +52,11 @@ namespace Dominio
             }
 
             return esOcasional;
+        }
+
+        public override string ToString()
+        {
+            return _nombre + " - " + base.ToString() + _nacionalidad;
         }
     }
 }

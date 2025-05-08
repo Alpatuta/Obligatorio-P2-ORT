@@ -28,6 +28,10 @@ namespace Dominio
 
         public int Id { get { return _id; } }
 
+        public string Modelo { get { return _modelo; } }
+
+        public int Alcance { get { return _alcance; } }
+
         public void ValidarAvion()
         {
             if (string.IsNullOrEmpty(_fabricante))

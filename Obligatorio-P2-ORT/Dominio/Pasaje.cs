@@ -14,6 +14,7 @@ namespace Dominio
         private DateTime _fecha;
         private Cliente _pasajero;
         private Equipaje _equipaje;
+        private int _precio;
 
         public Pasaje(Vuelo vuelo, DateTime fecha, Cliente pasajero, Equipaje equipaje)
         {
@@ -25,6 +26,8 @@ namespace Dominio
         }
 
         public int IdPasaje { get { return _idPasaje; } }
+
+        public DateTime Fecha { get { return _fecha; } }
 
         public void ValidarPasaje()
         {
@@ -41,7 +44,6 @@ namespace Dominio
             if(_fecha == DateTime.MinValue)
             {
                 throw new Exception("Ingresar una fecha");
-                //Validar que la fecha corresponda con la frecuencia de vuelo. Preguntar
             }
 
             if(_equipaje != Equipaje.Light && _equipaje != Equipaje.Cabina && _equipaje != Equipaje.Bodega)
@@ -62,6 +64,11 @@ namespace Dominio
             }
 
             return existe;
+        }
+
+        public override string ToString()
+        {
+            return $"{_idPasaje} - {_pasajero.Nombre} - {_precio} - {_fecha} - {_vuelo.NumeroVuelo} \n";
         }
     }
 }

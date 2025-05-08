@@ -36,3 +36,22 @@ C:\Users\59892\OneDrive\Desktop\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-
 C:\Users\59892\OneDrive\Desktop\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.pdb
 C:\Users\59892\OneDrive\Desktop\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.genruntimeconfig.cache
 C:\Users\59892\OneDrive\Desktop\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\ref\Obligatorio-P2-ORT.dll
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\bin\Debug\net8.0\Obligatorio-P2-ORT.exe
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\bin\Debug\net8.0\Obligatorio-P2-ORT.deps.json
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\bin\Debug\net8.0\Obligatorio-P2-ORT.runtimeconfig.json
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\bin\Debug\net8.0\Obligatorio-P2-ORT.dll
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\bin\Debug\net8.0\Obligatorio-P2-ORT.pdb
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\bin\Debug\net8.0\Dominio.dll
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\bin\Debug\net8.0\Dominio.pdb
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.csproj.AssemblyReference.cache
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.AssemblyInfoInputs.cache
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.AssemblyInfo.cs
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.csproj.CoreCompileInputs.cache
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.sourcelink.json
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligato.EEE45093.Up2Date
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.dll
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\refint\Obligatorio-P2-ORT.dll
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.pdb
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\Obligatorio-P2-ORT.genruntimeconfig.cache
+C:\Users\59892\OneDrive\Desktop\2do Semestre\ObligatorioP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\obj\Debug\net8.0\ref\Obligatorio-P2-ORT.dll

@@ -44,5 +44,10 @@ namespace Dominio
 
             return sonIguales;
         }
+
+        public override string ToString()
+        {
+            return $"{_correoElectronico} - ";
+        }
     }
 }

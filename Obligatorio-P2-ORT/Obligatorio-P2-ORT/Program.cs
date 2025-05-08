@@ -6,6 +6,14 @@ namespace Obligatorio_P2_ORT
         private static Sistema s = new Sistema();
         static void Main(string[] args)
         {
+            try
+            {
+                s.PrecargaGeneral();
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
             int opcion = -1;
             while (opcion != 0) 
             {
@@ -34,7 +42,7 @@ namespace Obligatorio_P2_ORT
                     MostrarClientes();
                     break;
                 case 2:
-                    ListadoAeropuertos();
+                    ListadoVuelos();
                     break;
                 case 3:
                     AltaClienteOcasional();
@@ -50,42 +58,82 @@ namespace Obligatorio_P2_ORT
 
         static void CrearCliente ()
         {
-            Console.WriteLine("Ingrese su nombre");
-            string nombre = Console.ReadLine();
+            try
+            {
+                Console.WriteLine("Ingrese su nombre");
+                string nombre = Console.ReadLine();
 
-            Console.WriteLine("Ingrese su contraseña");
-            string contrasenia = Console.ReadLine();
+                Console.WriteLine("Ingrese su contraseña");
+                string contrasenia = Console.ReadLine();
 
-            Console.WriteLine("Ingrese su correo electronico");
-            string correo = Console.ReadLine();
+                Console.WriteLine("Ingrese su correo electronico");
+                string correo = Console.ReadLine();
 
-            Console.WriteLine("Ingrese su documento");
-            string documento = Console.ReadLine();
+                Console.WriteLine("Ingrese su documento");
+                string documento = Console.ReadLine();
 
-            Console.WriteLine("Ingrese su nacionalidad");
-            string nacionalidad = Console.ReadLine();
+                Console.WriteLine("Ingrese su nacionalidad");
+                string nacionalidad = Console.ReadLine();
+
+                Random random = new Random();
+
+                int numeroRandom = random.Next(0, 1);
+                bool elegible = false;
+
+                if (numeroRandom == 1)
+                {
+                    elegible = true;
+                }
+
+                Ocasional ocasional = new Ocasional(correo, contrasenia, nombre, documento, nacionalidad, elegible);
+                s.AltaUsuarioClienteOcasional(ocasional);
+
+                Console.WriteLine("Cliente creado con exito");
+            }catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+                    
+            }
 
            
         }
 
-        static void MostrarClientes()
+        static void MostrarClientes() 
         {
-            s.PrecargaGeneral();
+            Console.WriteLine(s.ClientesString());
         }
 
-        static void ListadoAeropuertos()
+        static void ListadoVuelos()
         {
-            Console.WriteLine("2");
+            try
+            {
+
+                Console.WriteLine("\n Codigos disponibles: JFK - LAX - LHR - CDG - FRA - NRT - SYD - GRU - EZE - MEX - MAD - FCO - AMS - BCN - YYZ - ATL - DXB - SIN - SCL - MVD");
+
+                Console.WriteLine("Ingrese un codigo de aeropuerto");
+                string codigo = Console.ReadLine().ToUpper();
+
+                Console.WriteLine(s.ListadoVuelosIATA(codigo));
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         static void AltaClienteOcasional()
         {
-            Console.WriteLine("3");
+            CrearCliente();
         }
 
         static void ListadoPasajes() 
         {
-            Console.WriteLine("4");
+            Console.WriteLine("Ingrese la fecha de inicio");
+            DateTime.TryParse(Console.ReadLine(), out DateTime fechaUno);
+
+            Console.WriteLine("Ingrese la fecha final");
+            DateTime.TryParse(Console.ReadLine(), out DateTime fechaDos);
+            
+            Console.WriteLine(s.PasajesEntreFechas(fechaUno, fechaDos));
         }
     }
 }

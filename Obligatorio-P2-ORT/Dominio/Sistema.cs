@@ -96,6 +96,7 @@ namespace Dominio
             if (!_usuarios.Contains(ocasional))
             {
                 _usuarios.Add(ocasional);
+                
             }
             else
             {
@@ -263,7 +264,7 @@ namespace Dominio
 
         private void PrecargaAviones()
         {
-            AltaAviones(new Avion("Boeing", "737 MAX 8", 178, 6570, 2600.50));
+            AltaAviones(new Avion("Boeing", "737MAX8", 178, 6570, 2600.50));
             AltaAviones(new Avion("Airbus", "A320neo", 180, 6300, 2500.75));
             AltaAviones(new Avion("Embraer", "E195-E2", 132, 4815, 2100.00));
             AltaAviones(new Avion("Bombardier", "CRJ900", 90, 2956, 1800.35));
@@ -296,99 +297,186 @@ namespace Dominio
         private void PrecargaRutas()
         {
             AltaRutas(new Ruta(BuscarAeropuerto("JFK"), BuscarAeropuerto("LAX"), 3983));
-            AltaRutas(new Ruta(BuscarAeropuerto("JFK"), BuscarAeropuerto("CDG"), 5846));
-            AltaRutas(new Ruta(BuscarAeropuerto("LAX"), BuscarAeropuerto("NRT"), 8785));
-            AltaRutas(new Ruta(BuscarAeropuerto("LHR"), BuscarAeropuerto("DXB"), 5500));
-            AltaRutas(new Ruta(BuscarAeropuerto("EZE"), BuscarAeropuerto("GRU"), 1670));
-            AltaRutas(new Ruta(BuscarAeropuerto("SYD"), BuscarAeropuerto("SIN"), 6300));
-            AltaRutas(new Ruta(BuscarAeropuerto("MEX"), BuscarAeropuerto("LAX"), 2500));
-            AltaRutas(new Ruta(BuscarAeropuerto("ATL"), BuscarAeropuerto("YYZ"), 1190));
-            AltaRutas(new Ruta(BuscarAeropuerto("MVD"), BuscarAeropuerto("GRU"), 1580));
-            AltaRutas(new Ruta(BuscarAeropuerto("SCL"), BuscarAeropuerto("EZE"), 1130));
-            AltaRutas(new Ruta(BuscarAeropuerto("CDG"), BuscarAeropuerto("FCO"), 1105));
-            AltaRutas(new Ruta(BuscarAeropuerto("FCO"), BuscarAeropuerto("MAD"), 1360));
-            AltaRutas(new Ruta(BuscarAeropuerto("BCN"), BuscarAeropuerto("AMS"), 1240));
-            AltaRutas(new Ruta(BuscarAeropuerto("JFK"), BuscarAeropuerto("MAD"), 5760));
-            AltaRutas(new Ruta(BuscarAeropuerto("JFK"), BuscarAeropuerto("YYZ"), 600));
-            AltaRutas(new Ruta(BuscarAeropuerto("LHR"), BuscarAeropuerto("AMS"), 360));
-            AltaRutas(new Ruta(BuscarAeropuerto("GRU"), BuscarAeropuerto("MEX"), 7450));
-            AltaRutas(new Ruta(BuscarAeropuerto("MVD"), BuscarAeropuerto("EZE"), 205));
+            AltaRutas(new Ruta(BuscarAeropuerto("JFK"), BuscarAeropuerto("MEX"), 3365));
+            AltaRutas(new Ruta(BuscarAeropuerto("LAX"), BuscarAeropuerto("YYZ"), 3491));
+            AltaRutas(new Ruta(BuscarAeropuerto("EZE"), BuscarAeropuerto("GRU"), 1673));
+            AltaRutas(new Ruta(BuscarAeropuerto("EZE"), BuscarAeropuerto("SCL"), 1136));
+            AltaRutas(new Ruta(BuscarAeropuerto("SCL"), BuscarAeropuerto("GRU"), 2621));
+            AltaRutas(new Ruta(BuscarAeropuerto("MVD"), BuscarAeropuerto("GRU"), 1585));
+            AltaRutas(new Ruta(BuscarAeropuerto("MVD"), BuscarAeropuerto("EZE"), 228));
             AltaRutas(new Ruta(BuscarAeropuerto("MVD"), BuscarAeropuerto("SCL"), 1370));
-            AltaRutas(new Ruta(BuscarAeropuerto("LAX"), BuscarAeropuerto("SYD"), 12050));
-            AltaRutas(new Ruta(BuscarAeropuerto("NRT"), BuscarAeropuerto("SIN"), 5325));
-            AltaRutas(new Ruta(BuscarAeropuerto("DXB"), BuscarAeropuerto("SIN"), 5840));
-            AltaRutas(new Ruta(BuscarAeropuerto("CDG"), BuscarAeropuerto("SIN"), 10730));
-            AltaRutas(new Ruta(BuscarAeropuerto("ATL"), BuscarAeropuerto("LAX"), 3110));
-            AltaRutas(new Ruta(BuscarAeropuerto("AMS"), BuscarAeropuerto("FRA"), 370));
-            AltaRutas(new Ruta(BuscarAeropuerto("BCN"), BuscarAeropuerto("CDG"), 850));
-            AltaRutas(new Ruta(BuscarAeropuerto("MAD"), BuscarAeropuerto("EZE"), 10120));
-            AltaRutas(new Ruta(BuscarAeropuerto("LHR"), BuscarAeropuerto("JFK"), 5540));
-            AltaRutas(new Ruta(BuscarAeropuerto("FRA"), BuscarAeropuerto("DXB"), 4830));
-            AltaRutas(new Ruta(BuscarAeropuerto("SIN"), BuscarAeropuerto("SYD"), 6300));
+            AltaRutas(new Ruta(BuscarAeropuerto("MAD"), BuscarAeropuerto("CDG"), 1053));
+            AltaRutas(new Ruta(BuscarAeropuerto("FCO"), BuscarAeropuerto("CDG"), 1105));
+            AltaRutas(new Ruta(BuscarAeropuerto("FCO"), BuscarAeropuerto("MAD"), 1364));
+            AltaRutas(new Ruta(BuscarAeropuerto("BCN"), BuscarAeropuerto("FRA"), 1136));
+            AltaRutas(new Ruta(BuscarAeropuerto("AMS"), BuscarAeropuerto("CDG"), 430));
+            AltaRutas(new Ruta(BuscarAeropuerto("AMS"), BuscarAeropuerto("LHR"), 370));
+            AltaRutas(new Ruta(BuscarAeropuerto("LHR"), BuscarAeropuerto("FRA"), 656));
+            AltaRutas(new Ruta(BuscarAeropuerto("LHR"), BuscarAeropuerto("MAD"), 1264));
+            AltaRutas(new Ruta(BuscarAeropuerto("CDG"), BuscarAeropuerto("MEX"), 5680));
+            AltaRutas(new Ruta(BuscarAeropuerto("GRU"), BuscarAeropuerto("MEX"), 738));
+            AltaRutas(new Ruta(BuscarAeropuerto("MEX"), BuscarAeropuerto("ATL"), 2147));
+            AltaRutas(new Ruta(BuscarAeropuerto("ATL"), BuscarAeropuerto("JFK"), 1221));
+            AltaRutas(new Ruta(BuscarAeropuerto("ATL"), BuscarAeropuerto("YYZ"), 1203));
+            AltaRutas(new Ruta(BuscarAeropuerto("YYZ"), BuscarAeropuerto("LHR"), 5700));
+            AltaRutas(new Ruta(BuscarAeropuerto("CDG"), BuscarAeropuerto("FRA"), 478));
+            AltaRutas(new Ruta(BuscarAeropuerto("SIN"), BuscarAeropuerto("NRT"), 5320));
+            AltaRutas(new Ruta(BuscarAeropuerto("DXB"), BuscarAeropuerto("FCO"), 4342));
+            AltaRutas(new Ruta(BuscarAeropuerto("DXB"), BuscarAeropuerto("AMS"), 5160));
+            AltaRutas(new Ruta(BuscarAeropuerto("JFK"), BuscarAeropuerto("YYZ"), 574));
+            AltaRutas(new Ruta(BuscarAeropuerto("SYD"), BuscarAeropuerto("SIN"), 6300));
+            AltaRutas(new Ruta(BuscarAeropuerto("MEX"), BuscarAeropuerto("EZE"), 738)); 
+            AltaRutas(new Ruta(BuscarAeropuerto("GRU"), BuscarAeropuerto("MAD"), 5220));
+
         }
 
         private void PrecargaVuelos()
         {
-            AltaVuelos(new Vuelo("AR101", Frecuencia.Lunes, BuscarRuta(0), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AR102", Frecuencia.Martes, BuscarRuta(1), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AR103", Frecuencia.Miércoles, BuscarRuta(2), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AR104", Frecuencia.Jueves, BuscarRuta(3), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("AR105", Frecuencia.Viernes, BuscarRuta(4), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AR106", Frecuencia.Sábado, BuscarRuta(5), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AR107", Frecuencia.Domingo, BuscarRuta(6), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AR108", Frecuencia.Lunes, BuscarRuta(7), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("AR109", Frecuencia.Martes, BuscarRuta(8), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AR110", Frecuencia.Miércoles, BuscarRuta(9), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AR111", Frecuencia.Jueves, BuscarRuta(10), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AR112", Frecuencia.Viernes, BuscarRuta(11), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("AR113", Frecuencia.Sábado, BuscarRuta(12), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AR114", Frecuencia.Domingo, BuscarRuta(13), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AR115", Frecuencia.Lunes, BuscarRuta(14), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AR116", Frecuencia.Martes, BuscarRuta(15), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("AR117", Frecuencia.Miércoles, BuscarRuta(16), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AR118", Frecuencia.Jueves, BuscarRuta(17), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AR119", Frecuencia.Viernes, BuscarRuta(18), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AR120", Frecuencia.Sábado, BuscarRuta(19), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("AR121", Frecuencia.Domingo, BuscarRuta(20), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AR122", Frecuencia.Lunes, BuscarRuta(21), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AR123", Frecuencia.Martes, BuscarRuta(22), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AR124", Frecuencia.Miércoles, BuscarRuta(23), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("AR125", Frecuencia.Jueves, BuscarRuta(24), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AR126", Frecuencia.Viernes, BuscarRuta(25), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AR127", Frecuencia.Sábado, BuscarRuta(26), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AR128", Frecuencia.Domingo, BuscarRuta(27), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("AR129", Frecuencia.Lunes, BuscarRuta(28), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AR130", Frecuencia.Martes, BuscarRuta(29), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("AA1001", Frecuencia.Lunes, BuscarRuta(0), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("AM2342", Frecuencia.Martes, BuscarRuta(1), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("AC9982", Frecuencia.Miércoles, BuscarRuta(2), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("AR7821", Frecuencia.Jueves, BuscarRuta(3), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("LA1023", Frecuencia.Viernes, BuscarRuta(4), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("LA1234", Frecuencia.Sábado, BuscarRuta(5), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("G36012", Frecuencia.Domingo, BuscarRuta(6), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("UY5678", Frecuencia.Lunes, BuscarRuta(7), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("UY3421", Frecuencia.Martes, BuscarRuta(8), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("IB3000", Frecuencia.Miércoles, BuscarRuta(9), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("AF1024", Frecuencia.Jueves, BuscarRuta(10), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("AZ4500", Frecuencia.Viernes, BuscarRuta(11), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("IB3210", Frecuencia.Sábado, BuscarRuta(12), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("KL2100", Frecuencia.Domingo, BuscarRuta(13), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("KL2190", Frecuencia.Lunes, BuscarRuta(14), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("BA1102", Frecuencia.Martes, BuscarRuta(15), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("BA1203", Frecuencia.Miércoles, BuscarRuta(16), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("AF4530", Frecuencia.Jueves, BuscarRuta(17), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("LA2201", Frecuencia.Viernes, BuscarRuta(18), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("AM9999", Frecuencia.Sábado, BuscarRuta(19), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("DL5670", Frecuencia.Domingo, BuscarRuta(20), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("DL9087", Frecuencia.Lunes, BuscarRuta(21), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("AC3388", Frecuencia.Martes, BuscarRuta(22), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("LH6742", Frecuencia.Miércoles, BuscarRuta(23), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("SQ9001", Frecuencia.Jueves, BuscarRuta(24), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("EK3021", Frecuencia.Viernes, BuscarRuta(25), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("EK5000", Frecuencia.Sábado, BuscarRuta(26), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("AA4321", Frecuencia.Domingo, BuscarRuta(27), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("QF9988", Frecuencia.Lunes, BuscarRuta(28), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("AM8800", Frecuencia.Martes, BuscarRuta(29), BuscarAvion(1)));
+
         }
 
         private void PrecargasPasajes()
         {
-            AltaPasajes(new Pasaje(BuscarVuelo("AR101"), new DateTime(2025, 06, 01), BuscarCliente("ocasional1@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR102"), new DateTime(2025, 06, 02), BuscarCliente("ocasional2@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR103"), new DateTime(2025, 06, 03), BuscarCliente("ocasional3@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR104"), new DateTime(2025, 06, 04), BuscarCliente("ocasional4@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR105"), new DateTime(2025, 06, 05), BuscarCliente("ocasional5@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR106"), new DateTime(2025, 06, 06), BuscarCliente("ocasional5@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR107"), new DateTime(2025, 06, 07), BuscarCliente("ocasional5@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR108"), new DateTime(2025, 06, 08), BuscarCliente("ocasional3@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR109"), new DateTime(2025, 06, 09), BuscarCliente("ocasional4@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR110"), new DateTime(2025, 06, 10), BuscarCliente("ocasional3@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR111"), new DateTime(2025, 06, 11), BuscarCliente("ocasional4@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR112"), new DateTime(2025, 06, 12), BuscarCliente("ocasional4@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR113"), new DateTime(2025, 06, 13), BuscarCliente("ocasional5@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR114"), new DateTime(2025, 06, 14), BuscarCliente("ocasional2@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR115"), new DateTime(2025, 06, 15), BuscarCliente("ocasional5@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR116"), new DateTime(2025, 06, 16), BuscarCliente("ocasional4@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR117"), new DateTime(2025, 06, 17), BuscarCliente("ocasional1@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR118"), new DateTime(2025, 06, 18), BuscarCliente("ocasional4@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR119"), new DateTime(2025, 06, 19), BuscarCliente("ocasional4@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR120"), new DateTime(2025, 06, 20), BuscarCliente("ocasional2@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR121"), new DateTime(2025, 06, 21), BuscarCliente("ocasional2@gmail.com"), Equipaje.Cabina));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR122"), new DateTime(2025, 06, 22), BuscarCliente("ocasional1@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR123"), new DateTime(2025, 06, 23), BuscarCliente("ocasional1@gmail.com"), Equipaje.Bodega));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR124"), new DateTime(2025, 06, 24), BuscarCliente("ocasional3@gmail.com"), Equipaje.Light));
-            AltaPasajes(new Pasaje(BuscarVuelo("AR125"), new DateTime(2025, 06, 25), BuscarCliente("ocasional5@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AA1001"), new DateTime(2025, 5, 12), BuscarCliente("premium1@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("AM2342"), new DateTime(2025, 5, 13), BuscarCliente("premium2@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AC9982"), new DateTime(2025, 5, 14), BuscarCliente("premium3@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("AR7821"), new DateTime(2025, 5, 15), BuscarCliente("premium4@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("LA1023"), new DateTime(2025, 5, 16), BuscarCliente("premium5@gmail.com"), Equipaje.Cabina));
 
+            AltaPasajes(new Pasaje(BuscarVuelo("LA1234"), new DateTime(2025, 5, 17), BuscarCliente("ocasional1@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("G36012"), new DateTime(2025, 5, 18), BuscarCliente("ocasional2@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("UY5678"), new DateTime(2025, 5, 19), BuscarCliente("ocasional3@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("UY3421"), new DateTime(2025, 5, 20), BuscarCliente("ocasional4@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("IB3000"), new DateTime(2025, 5, 21), BuscarCliente("ocasional5@gmail.com"), Equipaje.Light));
+
+            AltaPasajes(new Pasaje(BuscarVuelo("AF1024"), new DateTime(2025, 5, 22), BuscarCliente("premium1@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AZ4500"), new DateTime(2025, 5, 23), BuscarCliente("premium2@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("IB3210"), new DateTime(2025, 5, 24), BuscarCliente("premium3@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("KL2100"), new DateTime(2025, 5, 25), BuscarCliente("premium4@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("KL2190"), new DateTime(2025, 5, 26), BuscarCliente("premium5@gmail.com"), Equipaje.Bodega));
+
+            AltaPasajes(new Pasaje(BuscarVuelo("BA1102"), new DateTime(2025, 5, 27), BuscarCliente("ocasional1@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("BA1203"), new DateTime(2025, 5, 28), BuscarCliente("ocasional2@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AF4530"), new DateTime(2025, 5, 29), BuscarCliente("ocasional3@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("LA2201"), new DateTime(2025, 5, 30), BuscarCliente("ocasional4@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("AM9999"), new DateTime(2025, 5, 31), BuscarCliente("ocasional5@gmail.com"), Equipaje.Cabina));
+
+            AltaPasajes(new Pasaje(BuscarVuelo("DL5670"), new DateTime(2025, 6, 1), BuscarCliente("premium1@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("DL9087"), new DateTime(2025, 6, 2), BuscarCliente("premium2@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("AC3388"), new DateTime(2025, 6, 3), BuscarCliente("premium3@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("LH6742"), new DateTime(2025, 6, 4), BuscarCliente("premium4@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("SQ9001"), new DateTime(2025, 6, 5), BuscarCliente("premium5@gmail.com"), Equipaje.Light));
+
+            AltaPasajes(new Pasaje(BuscarVuelo("EK3021"), new DateTime(2025, 6, 6), BuscarCliente("ocasional1@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("EK5000"), new DateTime(2025, 6, 7), BuscarCliente("ocasional2@gmail.com"), Equipaje.Bodega));
+            AltaPasajes(new Pasaje(BuscarVuelo("AA4321"), new DateTime(2025, 6, 8), BuscarCliente("ocasional3@gmail.com"), Equipaje.Light));
+            AltaPasajes(new Pasaje(BuscarVuelo("QF9988"), new DateTime(2025, 6, 9), BuscarCliente("ocasional4@gmail.com"), Equipaje.Cabina));
+            AltaPasajes(new Pasaje(BuscarVuelo("AM8800"), new DateTime(2025, 6, 10), BuscarCliente("ocasional5@gmail.com"), Equipaje.Bodega));
+
+        }
+
+
+        //Mostrar clientes
+        public string ClientesString()
+        {
+            string datosCliente = "";
+
+            foreach(Usuario usu in _usuarios)
+            {
+                if(usu is Cliente)
+                {
+                    datosCliente += usu.ToString();
+                }
+            }
+
+            return datosCliente;
+        }
+
+        //Mostrar vuelos determinados
+        public string ListadoVuelosIATA(string codigo)
+        {
+            string vuelosIATA = "";
+
+            if(codigo.Length == 3 && BuscarAeropuerto(codigo) != null)
+            {
+                foreach (Vuelo vuelo in _vuelos)
+                {
+                    if (vuelo.PerteneceRuta(codigo))
+                    {
+                        vuelosIATA += vuelo.ToString();
+                    }
+                }
+            }
+            else
+            {
+                throw new Exception("Codigo IATA invalido");
+            }
+
+            return vuelosIATA;
+        }
+
+        public bool LaPrimeraFechaEsMayor(DateTime fechaUno, DateTime fechaDos)
+        {
+            bool esMayor = false;
+            if (fechaUno > fechaDos)
+            {
+                esMayor = true;
+            }
+            return esMayor;
+        }
+
+        public string PasajesEntreFechas(DateTime fechaUno, DateTime fechaDos)
+        {
+            string datosPasajes = "";
+
+            foreach (Pasaje pasaje in _pasajes)
+            {
+                if (!LaPrimeraFechaEsMayor(fechaUno, fechaDos))
+                {
+                    if (pasaje.Fecha >= fechaUno && pasaje.Fecha <= fechaDos)
+                    {
+                        datosPasajes += pasaje.ToString();
+                    }
+                    else
+                    {
+                        if (pasaje.Fecha <= fechaUno && pasaje.Fecha >= fechaDos)
+                        {
+                            datosPasajes += pasaje.ToString();
+                        }
+                    }
+                }
+            }
+            return datosPasajes;
         }
     }
 }
