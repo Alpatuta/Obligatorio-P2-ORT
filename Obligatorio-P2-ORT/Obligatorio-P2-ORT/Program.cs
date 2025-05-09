@@ -102,8 +102,9 @@ namespace Obligatorio_P2_ORT
             }
             catch (Exception ex) 
             {
+
                 Console.WriteLine(ex.Message);
-                    
+                Console.WriteLine("");
             }
         }
         static void AltaClienteOcasional()
@@ -144,14 +145,32 @@ namespace Obligatorio_P2_ORT
                 Console.WriteLine("");
                 Console.WriteLine("Ingrese un codigo de aeropuerto");
                 string codigo = Console.ReadLine().ToUpper();
-
-                Console.WriteLine("");
-                Console.WriteLine($"-Vuelos para {codigo.ToUpper()}-");
-                Console.WriteLine("");
-
-                if( codigo != "")
+                
+                if(codigo != "")
                 {
-                    Console.WriteLine(s.ListadoVuelosIATA(codigo));
+                    if (s.BuscarAeropuerto(codigo) != null)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine($"-Vuelos para {codigo.ToUpper()}-");
+                        Console.WriteLine("");
+                        Console.WriteLine(s.ListadoVuelosIATA(codigo));
+                    } else
+                    {
+                        while (s.BuscarAeropuerto(codigo) == null)
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("No existe ese aeropuerto");
+                            Console.WriteLine("");
+                            Console.WriteLine("Ingrese un codigo de aeropuerto");
+                            codigo = Console.ReadLine().ToUpper();
+                        }
+
+                        Console.WriteLine("");
+                        Console.WriteLine($"-Vuelos para {codigo.ToUpper()}-");
+                        Console.WriteLine("");
+                        Console.WriteLine(s.ListadoVuelosIATA(codigo));
+                    }
+                    
                 }else
                 {
                     Console.WriteLine("El codigo no puede ser vacio");
