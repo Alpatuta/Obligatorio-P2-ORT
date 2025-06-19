@@ -15,11 +15,7 @@ namespace Dominio
         {
             _esElegible = esElegible;
         }
-
-      
-
  
-
         public void Validar()
         {
             base.ValidarCliente();
@@ -37,6 +33,19 @@ namespace Dominio
             return base.ToString() + " - " + elegible + "\n";
         }
 
+        public override double CostoSegunCliente(double costoBase, Equipaje equipaje)
+        {
+            
+            if ((int)equipaje == 1)
+            {
+                costoBase *= 1.10;      
+            }
+            else if((int)equipaje == 2)
+            {
+                costoBase *= 1.20;
+            }
 
+            return costoBase;
+        }
     }
 }

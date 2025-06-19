@@ -17,6 +17,7 @@ namespace Dominio
 
         public Sistema()
         {
+
             PrecargaGeneral();
         }
         // ALTAS DE OBJETOS
@@ -410,7 +411,6 @@ namespace Dominio
         }
 
 
-        //Mostrar clientes
         public string ClientesString()
         {
             string datosCliente = "";

@@ -12,6 +12,7 @@ namespace Dominio
         private Frecuencia _frecuencia;
         private Ruta _ruta;
         private Avion _avion;
+        private double _costoDeAsiento;
 
         public Vuelo (string numeroVuelo, Frecuencia frecuencia, Ruta ruta, Avion avion)
         {
@@ -19,9 +20,15 @@ namespace Dominio
             _frecuencia = frecuencia;
             _ruta = ruta;
             _avion = avion;
+            _costoDeAsiento = CalcularPrecioCostoAsiento();
         }
 
         public string NumeroVuelo { get { return _numeroVuelo; } }
+
+        public Frecuencia Frecuencia
+        {
+            get { return _frecuencia; }
+        }
 
         public void ValidarVuelo()
         {
@@ -72,6 +79,20 @@ namespace Dominio
         public override string ToString()
         {
             return $"{_numeroVuelo} - {_avion.Modelo} - {_ruta.infoCodigoIata()} - {_frecuencia} \n ";
+        }
+
+        public double CalcularPrecioCostoAsiento()
+        {
+            double costoAsiento = 0;
+
+            costoAsiento = (_avion.CostoOperacion * _ruta.Distancia + CostoOperacionSumadoRuta()) / _avion.CantAsientos;
+
+            return costoAsiento;
+        }
+
+        public double CostoOperacionSumadoRuta()
+        {
+            return _ruta.CostoOperacionSumado();
         }
     }
 }

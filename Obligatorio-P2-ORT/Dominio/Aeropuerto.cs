@@ -23,6 +23,8 @@ namespace Dominio
 
         public string CodigoIata { get { return _codigoIATA; } }
 
+        public double CostoOperacion { get { return _costoOperacionAeropuerto; } }
+
         public void ValidarAeropuerto() 
         { 
             if(string.IsNullOrEmpty(_codigoIATA) || _codigoIATA.Length != 3)

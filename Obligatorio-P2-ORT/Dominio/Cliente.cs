@@ -35,16 +35,8 @@ namespace Dominio
             }
         }
 
-        public bool EsOcasional(Cliente cliente, string documento)
-        {
-            bool esOcasional = false;
-            if (cliente._documento == documento)
-            {
-                esOcasional = true;
-            }
-
-            return esOcasional;
-        }
+        public abstract double CostoSegunCliente(double costoBase, Equipaje equipaje);
+        
 
         public override string ToString()
         {

@@ -22,5 +22,15 @@ namespace Dominio
         {
             return base.ToString() + " - " + _puntos + "\n";
         }
+
+        public override double CostoSegunCliente(double costoBase, Equipaje equipaje)
+        {
+            if ((int)equipaje == 1)
+            {
+                costoBase *= 1.05;
+            }
+
+            return costoBase;
+        }
     } 
 }

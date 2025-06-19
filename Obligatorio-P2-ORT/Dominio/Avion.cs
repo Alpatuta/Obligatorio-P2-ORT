@@ -32,6 +32,10 @@ namespace Dominio
 
         public int Alcance { get { return _alcance; } }
 
+        public double CostoOperacion { get { return _costoOperacion; } }
+
+        public int CantAsientos { get { return _cantAsientos; } }
+
         public void ValidarAvion()
         {
             if (string.IsNullOrEmpty(_fabricante))

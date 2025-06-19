@@ -73,5 +73,10 @@ namespace Dominio
         {
             return $"{_aeropuertoSalida.CodigoIata} - {_aeropuertoLlegada.CodigoIata}";
         }
+
+        public double CostoOperacionSumado()
+        {
+            return _aeropuertoSalida.CostoOperacion + _aeropuertoLlegada.CostoOperacion;
+        }
     }
 }

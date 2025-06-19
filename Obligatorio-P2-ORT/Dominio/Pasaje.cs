@@ -50,6 +50,10 @@ namespace Dominio
             {
                 throw new Exception("Ingrese el tipo de equipaje");
             }
+            if ((Frecuencia)_fecha.DayOfWeek != _vuelo.Frecuencia)
+            {
+                throw new Exception("la fecha del pasaje no coicide con la frecuencia del vuelo");
+            }
 
         }
 
@@ -69,6 +73,15 @@ namespace Dominio
         public override string ToString()
         {
             return $"{_idPasaje} - {_pasajero.Nombre} - {_precio} - {_fecha} - {_vuelo.NumeroVuelo} \n";
+        }
+
+        public double CostoPasaje()
+        {
+            double costoBase = _vuelo.CalcularPrecioCostoAsiento() * 1.25;
+
+            costoBase = _pasajero.CostoSegunCliente(costoBase, _equipaje) + _vuelo.CostoOperacionSumadoRuta();
+
+            return costoBase;
         }
     }
 }
