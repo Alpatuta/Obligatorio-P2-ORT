@@ -8,12 +8,13 @@ namespace Dominio
 {
     public enum Frecuencia
     {
-        Lunes, // = 0
-        Martes, // = 1
-        Miércoles, // = 2
-        Jueves, // = 3
-        Viernes, // = 4
-        Sábado, // = 5
-        Domingo // = 6
+        Sunday, // = 0
+        Monday, // = 1
+        Tuesday, // = 2
+        Wednesday, // = 3
+        Thursday, // = 4
+        Friday, // = 5
+        Saturday // = 6
+
     }
 }

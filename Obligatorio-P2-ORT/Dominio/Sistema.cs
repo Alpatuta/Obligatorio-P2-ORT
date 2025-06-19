@@ -14,12 +14,37 @@ namespace Dominio
         private List<Ruta> _rutas = new List<Ruta>();
         private List<Avion> _aviones = new List<Avion>();
         private List<Aeropuerto> _aeropuertos = new List<Aeropuerto>();
+        private static Sistema _instancia;
+
+        public static Sistema Instancia
+        {
+            get
+            {
+                if(_instancia == null)
+                {
+                    _instancia = new Sistema();
+                }
+
+                return _instancia;
+            }
+        }
 
         public Sistema()
         {
 
             PrecargaGeneral();
         }
+
+        public List<Usuario> Usuarios 
+        {
+            get { return _usuarios; }
+        }
+
+        public List<Pasaje> Pasajes
+        {
+            get { return _pasajes; }
+        }
+
         // ALTAS DE OBJETOS
         public void AltaAviones(Avion avion)
         {
@@ -337,36 +362,36 @@ namespace Dominio
 
         private void PrecargaVuelos()
         {
-            AltaVuelos(new Vuelo("AA1001", Frecuencia.Lunes, BuscarRuta(0), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AM2342", Frecuencia.Martes, BuscarRuta(1), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AC9982", Frecuencia.Miércoles, BuscarRuta(2), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AR7821", Frecuencia.Jueves, BuscarRuta(3), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("LA1023", Frecuencia.Viernes, BuscarRuta(4), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("LA1234", Frecuencia.Sábado, BuscarRuta(5), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("G36012", Frecuencia.Domingo, BuscarRuta(6), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("UY5678", Frecuencia.Lunes, BuscarRuta(7), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("UY3421", Frecuencia.Martes, BuscarRuta(8), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("IB3000", Frecuencia.Miércoles, BuscarRuta(9), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AF1024", Frecuencia.Jueves, BuscarRuta(10), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AZ4500", Frecuencia.Viernes, BuscarRuta(11), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("IB3210", Frecuencia.Sábado, BuscarRuta(12), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("KL2100", Frecuencia.Domingo, BuscarRuta(13), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("KL2190", Frecuencia.Lunes, BuscarRuta(14), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("BA1102", Frecuencia.Martes, BuscarRuta(15), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("BA1203", Frecuencia.Miércoles, BuscarRuta(16), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AF4530", Frecuencia.Jueves, BuscarRuta(17), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("LA2201", Frecuencia.Viernes, BuscarRuta(18), BuscarAvion(2)));
-            AltaVuelos(new Vuelo("AM9999", Frecuencia.Sábado, BuscarRuta(19), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("DL5670", Frecuencia.Domingo, BuscarRuta(20), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("DL9087", Frecuencia.Lunes, BuscarRuta(21), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("AC3388", Frecuencia.Martes, BuscarRuta(22), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("LH6742", Frecuencia.Miércoles, BuscarRuta(23), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("SQ9001", Frecuencia.Jueves, BuscarRuta(24), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("EK3021", Frecuencia.Viernes, BuscarRuta(25), BuscarAvion(1)));
-            AltaVuelos(new Vuelo("EK5000", Frecuencia.Sábado, BuscarRuta(26), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AA4321", Frecuencia.Domingo, BuscarRuta(27), BuscarAvion(3)));
-            AltaVuelos(new Vuelo("QF9988", Frecuencia.Lunes, BuscarRuta(28), BuscarAvion(0)));
-            AltaVuelos(new Vuelo("AM8800", Frecuencia.Martes, BuscarRuta(29), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("AA1001", Frecuencia.Monday, BuscarRuta(0), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("AM2342", Frecuencia.Tuesday, BuscarRuta(1), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("AC9982", Frecuencia.Wednesday, BuscarRuta(2), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("AR7821", Frecuencia.Thursday, BuscarRuta(3), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("LA1023", Frecuencia.Friday, BuscarRuta(4), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("LA1234", Frecuencia.Saturday, BuscarRuta(5), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("G36012", Frecuencia.Sunday, BuscarRuta(6), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("UY5678", Frecuencia.Monday, BuscarRuta(7), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("UY3421", Frecuencia.Tuesday, BuscarRuta(8), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("IB3000", Frecuencia.Wednesday, BuscarRuta(9), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("AF1024", Frecuencia.Thursday, BuscarRuta(10), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("AZ4500", Frecuencia.Friday, BuscarRuta(11), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("IB3210", Frecuencia.Saturday, BuscarRuta(12), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("KL2100", Frecuencia.Sunday, BuscarRuta(13), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("KL2190", Frecuencia.Monday, BuscarRuta(14), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("BA1102", Frecuencia.Tuesday, BuscarRuta(15), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("BA1203", Frecuencia.Wednesday, BuscarRuta(16), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("AF4530", Frecuencia.Thursday, BuscarRuta(17), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("LA2201", Frecuencia.Friday, BuscarRuta(18), BuscarAvion(2)));
+            AltaVuelos(new Vuelo("AM9999", Frecuencia.Saturday, BuscarRuta(19), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("DL5670", Frecuencia.Sunday, BuscarRuta(20), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("DL9087", Frecuencia.Monday, BuscarRuta(21), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("AC3388", Frecuencia.Tuesday, BuscarRuta(22), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("LH6742", Frecuencia.Wednesday, BuscarRuta(23), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("SQ9001", Frecuencia.Thursday, BuscarRuta(24), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("EK3021", Frecuencia.Friday, BuscarRuta(25), BuscarAvion(1)));
+            AltaVuelos(new Vuelo("EK5000", Frecuencia.Saturday, BuscarRuta(26), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("AA4321", Frecuencia.Sunday, BuscarRuta(27), BuscarAvion(3)));
+            AltaVuelos(new Vuelo("QF9988", Frecuencia.Monday, BuscarRuta(28), BuscarAvion(0)));
+            AltaVuelos(new Vuelo("AM8800", Frecuencia.Tuesday, BuscarRuta(29), BuscarAvion(1)));
 
         }
 

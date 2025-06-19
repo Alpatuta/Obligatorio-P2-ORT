@@ -81,18 +81,21 @@ namespace Dominio
             return $"{_numeroVuelo} - {_avion.Modelo} - {_ruta.infoCodigoIata()} - {_frecuencia} \n ";
         }
 
-        public double CalcularPrecioCostoAsiento()
-        {
-            double costoAsiento = 0;
-
-            costoAsiento = (_avion.CostoOperacion * _ruta.Distancia + CostoOperacionSumadoRuta()) / _avion.CantAsientos;
-
-            return costoAsiento;
-        }
 
         public double CostoOperacionSumadoRuta()
         {
             return _ruta.CostoOperacionSumado();
         }
+
+        public double CalcularPrecioCostoAsiento()
+        {
+            double costoAsiento = 0;
+
+            costoAsiento = ((_avion.CostoOperacion * _ruta.Distancia) + _ruta.CostoOperacionSumado()) / _avion.CantAsientos;
+
+            return costoAsiento;
+        }
+
+      
     }
 }

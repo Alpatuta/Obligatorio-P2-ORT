@@ -5,3 +5,26 @@
 
 <h1>Index</h1>
 
+<table>
+    <thead>
+    <th>Id De Pasaje</th>
+    <th>Fecha del Vuelo</th>
+    <th>Numero de Vuelo</th>
+    <th>Nombre Pasajero</th>
+    <th>Equipaje</th>
+    <th>Precio</th>
+    </thead>
+    <tbody>
+        @foreach (Dominio.Pasaje pasaje in Model)
+        {
+            <tr>
+                <td>@pasaje.IdPasaje</td>
+                <td>@pasaje.Fecha</td>
+                <td>@pasaje.Vuelo.NumeroVuelo</td>
+                <td>@pasaje.Pasajero.Nombre</td>
+                <td>@pasaje.Equipaje</td>
+                <td>@pasaje.Precio</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -14,7 +14,8 @@ namespace Dominio
         private DateTime _fecha;
         private Cliente _pasajero;
         private Equipaje _equipaje;
-        private int _precio;
+        private double _precio;
+        
 
         public Pasaje(Vuelo vuelo, DateTime fecha, Cliente pasajero, Equipaje equipaje)
         {
@@ -23,11 +24,20 @@ namespace Dominio
             _fecha = fecha;
             _pasajero = pasajero;
             _equipaje = equipaje;
+            _precio = Math.Round(CostoPasaje(), 2);
         }
 
         public int IdPasaje { get { return _idPasaje; } }
 
+        public Vuelo Vuelo { get { return _vuelo; } }
+
         public DateTime Fecha { get { return _fecha; } }
+
+        public Cliente Pasajero { get { return _pasajero; } }
+
+        public Equipaje Equipaje { get { return _equipaje; } }
+
+        public double Precio { get { return _precio; } }
 
         public void ValidarPasaje()
         {
@@ -50,7 +60,7 @@ namespace Dominio
             {
                 throw new Exception("Ingrese el tipo de equipaje");
             }
-            if ((Frecuencia)_fecha.DayOfWeek != _vuelo.Frecuencia)
+            if ((int)_fecha.DayOfWeek != (int)_vuelo.Frecuencia)
             {
                 throw new Exception("la fecha del pasaje no coicide con la frecuencia del vuelo");
             }

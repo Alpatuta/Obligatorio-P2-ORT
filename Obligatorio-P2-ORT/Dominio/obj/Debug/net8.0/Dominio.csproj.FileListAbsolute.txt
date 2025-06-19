@@ -42,3 +42,7 @@ C:\Users\alumnoFI\Desktop\OP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\
 C:\Users\alumnoFI\Desktop\OP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.dll
 C:\Users\alumnoFI\Desktop\OP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\refint\Dominio.dll
 C:\Users\alumnoFI\Desktop\OP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.pdb
+C:\Users\alumnoFI\Desktop\OP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\bin\Debug\net8.0\Dominio.deps.json
+C:\Users\alumnoFI\Desktop\OP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\bin\Debug\net8.0\Dominio.dll
+C:\Users\alumnoFI\Desktop\OP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\bin\Debug\net8.0\Dominio.pdb
+C:\Users\alumnoFI\Desktop\OP2\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\ref\Dominio.dll
