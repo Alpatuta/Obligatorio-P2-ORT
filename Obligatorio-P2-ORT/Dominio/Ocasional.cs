@@ -15,6 +15,12 @@ namespace Dominio
         {
             _esElegible = esElegible;
         }
+
+        public bool EsElegible
+        {
+            get { return _esElegible; }
+            set { _esElegible = value; }
+        }
  
         public void Validar()
         {
@@ -30,7 +36,7 @@ namespace Dominio
                 elegible = "Si";
             }
 
-            return base.ToString() + " - " + elegible + "\n";
+            return elegible;
         }
 
         public override double CostoSegunCliente(double costoBase, Equipaje equipaje)

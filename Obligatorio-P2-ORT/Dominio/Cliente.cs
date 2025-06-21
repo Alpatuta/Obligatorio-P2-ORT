@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public abstract class Cliente:Usuario
+    public abstract class Cliente:Usuario, IComparable<Cliente>
     {
         private string _nombre;
         private string _documento;
@@ -21,9 +21,14 @@ namespace Dominio
             _nacionalidad = nacionalidad;
         }
 
+        public Cliente() : base() { }
+       
+
         public string Cedula { get  { return _documento; } }
 
         public string Nombre { get { return _nombre; } }
+
+        public string Nacionalidad { get { return _nacionalidad; } }    
 
         public void ValidarCliente()
         {
@@ -41,6 +46,11 @@ namespace Dominio
         public override string ToString()
         {
             return _nombre + " - " + base.ToString() + _nacionalidad;
+        }
+
+        public int CompareTo(Cliente? other)
+        {
+            return _documento.CompareTo(other._documento);
         }
     }
 }

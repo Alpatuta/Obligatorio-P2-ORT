@@ -8,7 +8,14 @@ namespace MVC_Obligatorio.Controllers
         private Sistema miSistema = Sistema.Instancia;
         public IActionResult Index()
         {
-            return View(miSistema.Pasajes);
+            return View();
+        }
+
+        public IActionResult VerPasaje()
+        {
+            List<Pasaje> pasajes = miSistema.PasajesEntreFechas(DateTime.MinValue, DateTime.MaxValue);
+            
+            return View(pasajes);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Pasaje
+    public class Pasaje:IComparable<Pasaje>
     {
         private int _idPasaje;
         private static int s_ultimoId;
@@ -92,6 +92,11 @@ namespace Dominio
             costoBase = _pasajero.CostoSegunCliente(costoBase, _equipaje) + _vuelo.CostoOperacionSumadoRuta();
 
             return costoBase;
+        }
+
+        public int CompareTo(Pasaje ? other)
+        {
+            return _fecha.CompareTo(other._fecha);
         }
     }
 }

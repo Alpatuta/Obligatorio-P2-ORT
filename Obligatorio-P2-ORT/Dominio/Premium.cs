@@ -13,6 +13,9 @@ namespace Dominio
         public Premium(string correoElectronico, string contrasenia, string nombre, string documento, string nacionalidad) 
             : base(correoElectronico, contrasenia, nombre, documento, nacionalidad) { }
 
+        public Premium() : base() { }
+        public int Puntos {  get { return _puntos; } set {  _puntos = value; } }    
+
         public void Validar()
         {
             base.ValidarCliente();
