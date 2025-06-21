@@ -478,6 +478,14 @@ namespace Dominio
             return clientes;
         }
 
+        public List<Vuelo> MostrarVuelos()
+        {
+            List<Vuelo> vuelos = _vuelos;
+
+            vuelos.Sort();
+            return vuelos;
+        }
+
         //Mostrar vuelos determinados
         public string ListadoVuelosIATA(string codigo)
         {
