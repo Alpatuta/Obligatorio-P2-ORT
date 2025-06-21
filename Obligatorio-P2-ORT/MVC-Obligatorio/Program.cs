@@ -24,7 +24,7 @@ namespace MVC_Obligatorio
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Usuario}/{action=MostrarClientes}/{id?}");
 
             app.Run();
         }
