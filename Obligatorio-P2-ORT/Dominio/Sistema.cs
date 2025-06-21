@@ -45,6 +45,8 @@ namespace Dominio
             get { return _pasajes; }
         }
 
+
+
         // ALTAS DE OBJETOS
         public void AltaAviones(Avion avion)
         {
@@ -250,6 +252,32 @@ namespace Dominio
             return cliente;
         }
 
+        public Premium BuscarPremium(string mail)
+        {
+            Premium premium = null;
+            Cliente cliente = BuscarCliente(mail);
+
+            if ( cliente != null && cliente is Premium )
+            {
+                premium = (Premium) cliente;
+            }
+
+            return premium;
+        }
+
+        public Ocasional BuscarOcasional(string mail)
+        {
+            Ocasional ocasional = null;
+            Cliente cliente = BuscarCliente(mail);
+
+            if (cliente != null && cliente is Ocasional)
+            {
+                ocasional = (Ocasional)cliente;
+            }
+
+            return ocasional;
+        }
+
         // PRECARGAS
 
         public void PrecargaGeneral()
@@ -285,11 +313,11 @@ namespace Dominio
 
         private void PrecargaUsuarioClienteOcasional()
         {
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional1@gmail.com", "1234", "ocasional1", "67890123", "Uruguay", true));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional2@gmail.com", "1234", "ocasional2", "78901234", "Uruguay", false));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional3@gmail.com", "1234", "ocasional3", "89012345", "Uruguay", true));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional4@gmail.com", "1234", "ocasional4", "90123456", "Uruguay", false));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional5@gmail.com", "1234", "ocasional5", "01234567", "Uruguay", false));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional1@gmail.com", "1234", "ocasional1", "67890123", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional2@gmail.com", "1234", "ocasional2", "78901234", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional3@gmail.com", "1234", "ocasional3", "89012345", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional4@gmail.com", "1234", "ocasional4", "90123456", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional5@gmail.com", "1234", "ocasional5", "01234567", "Uruguay"));
         }
 
         private void PrecargaAviones()
@@ -495,7 +523,7 @@ namespace Dominio
                 {
                     if (pasaje.Fecha >= fechaUno && pasaje.Fecha <= fechaDos)
                     {
-                       pasajesOrdenados.Add(pasaje);
+                        pasajesOrdenados.Add(pasaje);
                     }
                 }
                 else
@@ -504,11 +532,25 @@ namespace Dominio
                     {
                         pasajesOrdenados.Add(pasaje);
                     }
-                }   
+                }
             }
 
             pasajesOrdenados.Sort();
             return pasajesOrdenados;
+        }
+
+        public void EditarPuntos(string mail, int puntos)
+        {
+            Premium premium = BuscarPremium(mail);
+
+            premium.Puntos = puntos;
+        }
+
+        public void EditarElegible(string mail, bool esElegible)
+        {
+            Ocasional ocasional = BuscarOcasional(mail);
+
+            ocasional.EsElegible = esElegible;
         }
     }
 }

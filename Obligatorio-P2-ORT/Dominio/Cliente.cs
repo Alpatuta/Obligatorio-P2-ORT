@@ -30,6 +30,8 @@ namespace Dominio
 
         public string Nacionalidad { get { return _nacionalidad; } }    
 
+
+
         public void ValidarCliente()
         {
             base.ValidarUsuario();

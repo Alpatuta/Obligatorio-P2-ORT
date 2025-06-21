@@ -10,18 +10,34 @@ namespace Dominio
     {
         private bool _esElegible;
 
-        public Ocasional(string correoElectronico, string contrasenia, string nombre, string documento, string nacionalidad, bool esElegible)
+        public Ocasional(string correoElectronico, string contrasenia, string nombre, string documento, string nacionalidad)
             : base(correoElectronico, contrasenia, nombre, documento, nacionalidad)
         {
-            _esElegible = esElegible;
+            _esElegible = esElegible();
         }
+
+        public Ocasional() : base() { }
 
         public bool EsElegible
         {
             get { return _esElegible; }
             set { _esElegible = value; }
         }
- 
+
+        private static bool esElegible()
+        {
+            Random random = new Random();
+            int nRandom = random.Next(0, 1);
+
+            bool esElegible = false;
+
+            if (nRandom == 1)
+            {
+                esElegible = true;
+            }
+
+            return esElegible;
+        }
         public void Validar()
         {
             base.ValidarCliente();

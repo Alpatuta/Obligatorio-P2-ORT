@@ -22,37 +22,50 @@
                 <td>@cliente.Nombre</td>
                 <td>@cliente.Cedula</td>
                 <td>@cliente.Nacionalidad</td>
-                <td>
+                
                     @if (cliente is Dominio.Premium premium)
                     {
+                    <td>
                         @premium.Puntos
+                    </td>
+                    <td>
                         <form asp-action="EditarPuntos" asp-controller="Usuario" method="post" style="display:inline";>
                             <input type="hidden" name="mail" value="@premium.Mail"/>
-                            <input type="number" name="puntos" value="@premium.Puntos" min="0"/>
+                            <input type="number" name="puntos" min="0"/>
                             <button type="submit">Guardar</button>
+                            
                         </form>
+                    </td>
                     }
-                </td>
-                <td>
+                
+                
                     @if (cliente is Dominio.Ocasional ocasional)
                     {
+                        <td></td>
+                    <td></td>
+                    <td>
                         @ocasional.ToString()
+                    </td>
+                    <td>
                         <form asp-action="EditarElegible" asp-controller="Usuario" method="post" style="display:inline" ;>
                             <input type="hidden" name="mail" value="@ocasional.Mail" />
 
                             <label>
-                                <input type="radio" name="esElegible" value="true" /> Si
+                                <input type="radio" name="EsElegible" value="true" /> Si
                             </label>
 
                             <label>
-                                <input type="radio" name="esElegible" value="false" /> No
+                                <input type="radio" name="EsElegible" value="false" /> No
                             </label>
 
                             <button type="submit">Guardar</button>
                         </form>
+                    </td>
                     }
-                </td>
+                
             </tr>
         }
     </tbody>
 </table>
+
+@ViewBag.Mensaje
