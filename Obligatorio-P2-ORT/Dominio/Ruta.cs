@@ -26,6 +26,9 @@ namespace Dominio
 
         public int Distancia {  get { return _distancia; } }
 
+        public Aeropuerto AeropuertoSalida {get { return _aeropuertoSalida; } }
+
+        public Aeropuerto AeropuertoLlegada { get { return _aeropuertoLlegada; } }
         public void ValidarRuta()
         {
             if(_aeropuertoLlegada == null)

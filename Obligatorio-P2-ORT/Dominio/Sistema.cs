@@ -45,7 +45,10 @@ namespace Dominio
             get { return _pasajes; }
         }
 
-
+        public List<Vuelo> Vuelos
+        { 
+            get { return _vuelos; } 
+        }
 
         // ALTAS DE OBJETOS
         public void AltaAviones(Avion avion)
@@ -482,7 +485,6 @@ namespace Dominio
         {
             List<Vuelo> vuelos = _vuelos;
 
-            vuelos.Sort();
             return vuelos;
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,10 +21,16 @@ namespace Dominio
             _frecuencia = frecuencia;
             _ruta = ruta;
             _avion = avion;
-            _costoDeAsiento = CalcularPrecioCostoAsiento();
+            _costoDeAsiento = Math.Round(CalcularPrecioCostoAsiento(), 2);
         }
 
         public string NumeroVuelo { get { return _numeroVuelo; } }
+
+        public Ruta Ruta { get {  return _ruta; } }
+
+        public Avion Avion { get { return _avion; } }
+
+        public double CostoDeAsiento { get { return _costoDeAsiento; } }
 
         public Frecuencia Frecuencia
         {
@@ -95,7 +102,5 @@ namespace Dominio
 
             return costoAsiento;
         }
-
-      
     }
 }
