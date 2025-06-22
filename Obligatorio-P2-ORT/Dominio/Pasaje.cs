@@ -24,7 +24,7 @@ namespace Dominio
             _fecha = fecha;
             _pasajero = pasajero;
             _equipaje = equipaje;
-            _precio = Math.Round(CostoPasaje(), 2);
+            _precio = Math.Round(CostoPasaje(), 0);
         }
 
         public int IdPasaje { get { return _idPasaje; } }
@@ -62,7 +62,7 @@ namespace Dominio
             }
             if ((int)_fecha.DayOfWeek != (int)_vuelo.Frecuencia)
             {
-                throw new Exception("la fecha del pasaje no coicide con la frecuencia del vuelo");
+                throw new Exception("La fecha del pasaje no coicide con la frecuencia del vuelo");
             }
 
         }

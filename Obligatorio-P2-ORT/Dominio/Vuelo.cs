@@ -21,7 +21,7 @@ namespace Dominio
             _frecuencia = frecuencia;
             _ruta = ruta;
             _avion = avion;
-            _costoDeAsiento = Math.Round(CalcularPrecioCostoAsiento(), 2);
+            _costoDeAsiento = Math.Round(CalcularPrecioCostoAsiento(), 0);
         }
 
         public string NumeroVuelo { get { return _numeroVuelo; } }

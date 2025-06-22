@@ -3,7 +3,19 @@
     ViewData["Title"] = "MostrarVuelos";
 }
 
-<h1>MostrarVuelos</h1>
+<h1>Mostrar Vuelos</h1>
+<form asp-action="BuscarVuelo" asp-controller="Vuelo" method="post" style="display:inline" ;>
+
+    <select name="codIata">
+        <option value="XXX">Seleccione...</option>
+        @foreach (Dominio.Vuelo v in Model)
+        {
+            <option value="@v.Ruta.AeropuertoLlegada.CodigoIata">@v.Ruta.AeropuertoLlegada.CodigoIata</option>
+        }
+    </select>
+    <button type="submit">Buscar</button>
+</form>
+
 <table>
     <thead>
         <th>Frecuencia</th>
@@ -42,6 +54,4 @@
         }
     </tbody>
 </table>
-
-@ViewBag.Mensaje
 
