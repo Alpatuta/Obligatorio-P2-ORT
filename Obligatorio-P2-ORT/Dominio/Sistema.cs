@@ -489,17 +489,17 @@ namespace Dominio
         }
 
         //Mostrar vuelos determinados
-        public string ListadoVuelosIATA(string codigo)
+        public List<Vuelo> ListadoVuelosIATA(string codigo)
         {
-            string vuelosIATA = "";
+            List<Vuelo> vuelosIATA = new List<Vuelo>();
 
-            if(codigo.Length == 3 && BuscarAeropuerto(codigo) != null)
+            if(codigo.Length == 3 && BuscarAeropuerto(codigo.ToUpper()) != null)
             {
                 foreach (Vuelo vuelo in _vuelos)
                 {
-                    if (vuelo.PerteneceRuta(codigo))
+                    if (vuelo.PerteneceRuta(codigo.ToUpper()))
                     {
-                        vuelosIATA += vuelo.ToString();
+                        vuelosIATA.Add(vuelo);
                     }
                 }
             }

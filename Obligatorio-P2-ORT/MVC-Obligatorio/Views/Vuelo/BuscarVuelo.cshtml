@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "BuscarVuelo";
+}
+
+<h1>Mostrar Vuelos</h1>
+<form asp-action="BuscarVuelo" asp-controller="Vuelo" method="post" style="display:inline" ;>
+
+    <select name="codIata">
+        <option value="XXX">Seleccione...</option>
+        @foreach(Dominio.Vuelo v in Dominio.Sistema.Instancia.Vuelos)
+        {
+            <option value="@v.Ruta.AeropuertoLlegada.CodigoIata">@v.Ruta.AeropuertoLlegada.CodigoIata</option>
+        }
+    </select>
+    <button type="submit">Buscar</button>
+</form>
+@if(Model != null)
+{
+    <table>
+        <thead>
+            <th>Frecuencia</th>
+            <th>Aeropuerto De Salida</th>
+            <th>Aeropuerto De Llegada</th>
+            <th>Modelo Avion</th>
+            <th>Costo de Asiento</th>
+            <th>Comprar Pasaje</th>
+        </thead>
+        <tbody>
+            @foreach (Dominio.Vuelo v in Model)
+            {
+                <tr>
+                    <td>@v.Frecuencia</td>
+                    <td>@v.Ruta.AeropuertoSalida.CodigoIata</td>
+                    <td>@v.Ruta.AeropuertoLlegada.CodigoIata</td>
+                    <td>@v.Avion.Modelo</td>
+                    <td>@v.CostoDeAsiento</td>
+
+                    <td>
+                        <form asp-action="ComprarPasaje" asp-controller="Vuelo" method="post" style="display:inline" ;>
+                            <input type="hidden" name="nroVuelo" value="@v.NumeroVuelo" />
+                            <input type="date" name="fecha" />
+                            <!--EL EMAIL ESTA HARCODE PORQUE ESO DEPENDE LA SESSION DEL LOGUIN-->
+                            <input type="hidden" name="mail" value="ocasional1@gmail.com" />
+                            <select name="equipaje">
+                                <option value="XXX">Seleccione...</option>
+                                <option value="Light">Light</option>
+                                <option value="Cabina">Cabina</option>
+                                <option value="Bodega">Bodega</option>
+                            </select>
+                            <button type="submit">Comprar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+} else
+{
+    @ViewBag.Mensaje
+}
+
+

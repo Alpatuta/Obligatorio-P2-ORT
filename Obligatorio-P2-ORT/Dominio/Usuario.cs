@@ -24,32 +24,18 @@ namespace Dominio
 
         public void ValidarUsuario()
         {
-            if (!TieneArroba(_correoElectronico))
+            if (string.IsNullOrEmpty(_correoElectronico))
             {
-                throw new Exception("El correo electronico debe contener un arroba");
+                throw new Exception("El correo electronico no puede estar vacio");
+            }
+            if (string.IsNullOrEmpty(_contrasenia))
+            {
+                throw new Exception("La contraseña no puede estar vacia");
             }
             if (_contrasenia.Length < 8)
             {
                 throw new Exception("La contraseña debe tener como mínimo 8 caracteres");
             }
-        }
-
-        private bool TieneArroba(string mail)
-        {
-            bool tiene = false;
-            int i = 0;
-
-            while (i < mail.Length && tiene == false)
-            {
-                if (mail[i] == '@')
-                {
-                    tiene = true;
-                }
-
-                i++;
-            }
-
-            return tiene;
         }
 
         public override bool Equals(object? obj)

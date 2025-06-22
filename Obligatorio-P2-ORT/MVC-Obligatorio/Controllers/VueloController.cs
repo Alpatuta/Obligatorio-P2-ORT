@@ -40,5 +40,26 @@ namespace MVC_Obligatorio.Controllers
             }
             return View();
         }
+
+        public IActionResult BuscarVuelo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public IActionResult BuscarVuelo(string codIata)
+        {
+            try
+            {
+                List<Vuelo> vuelos = miSistema.ListadoVuelosIATA(codIata);
+                return View(vuelos);
+            }catch (Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+            }
+
+            return View();
+        }
     }
 }
