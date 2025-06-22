@@ -45,7 +45,10 @@ namespace Dominio
             get { return _pasajes; }
         }
 
-
+        public List<Vuelo> Vuelos
+        { 
+            get { return _vuelos; } 
+        }
 
         // ALTAS DE OBJETOS
         public void AltaAviones(Avion avion)
@@ -298,26 +301,26 @@ namespace Dominio
 
         private void PrecargaUsuariosAdmin()
         {
-            AltaUsuarioAdministrador(new Administrador("admin1@gmail.com", "1234", "admin1"));
-            AltaUsuarioAdministrador(new Administrador("admin2@gmail.com", "1234", "admin2"));
+            AltaUsuarioAdministrador(new Administrador("admin1@gmail.com", "12345678", "admin1"));
+            AltaUsuarioAdministrador(new Administrador("admin2@gmail.com", "12345678", "admin2"));
         }
 
         private void PrecargaUsuarioClientePremium()
         {
-            AltaUsuarioClientePremium(new Premium("premium1@gmail.com", "1234", "premium1", "12345678", "Uruguay"));
-            AltaUsuarioClientePremium(new Premium("premium2@gmail.com", "1234", "premium2", "23456789", "España"));
-            AltaUsuarioClientePremium(new Premium("premium3@gmail.com", "1234", "premium3", "34567890", "España"));
-            AltaUsuarioClientePremium(new Premium("premium4@gmail.com", "1234", "premium4", "45678901", "Japon"));
-            AltaUsuarioClientePremium(new Premium("premium5@gmail.com", "1234", "premium5", "56789012", "Uruguay"));
+            AltaUsuarioClientePremium(new Premium("premium1@gmail.com", "12345678", "premium1", "56785678", "Uruguay"));
+            AltaUsuarioClientePremium(new Premium("premium2@gmail.com", "12345678", "premium2", "23456789", "España"));
+            AltaUsuarioClientePremium(new Premium("premium3@gmail.com", "12345678", "premium3", "34567890", "España"));
+            AltaUsuarioClientePremium(new Premium("premium4@gmail.com", "12345678", "premium4", "45678901", "Japon"));
+            AltaUsuarioClientePremium(new Premium("premium5@gmail.com", "12345678", "premium5", "56789012", "Uruguay"));
         }
 
         private void PrecargaUsuarioClienteOcasional()
         {
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional1@gmail.com", "1234", "ocasional1", "67890123", "Uruguay"));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional2@gmail.com", "1234", "ocasional2", "78901234", "Uruguay"));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional3@gmail.com", "1234", "ocasional3", "89012345", "Uruguay"));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional4@gmail.com", "1234", "ocasional4", "90123456", "Uruguay"));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional5@gmail.com", "1234", "ocasional5", "01234567", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional1@gmail.com", "12345678", "ocasional1", "67890123", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional2@gmail.com", "12345678", "ocasional2", "78901234", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional3@gmail.com", "12345678", "ocasional3", "89012345", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional4@gmail.com", "12345678", "ocasional4", "90123456", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional5@gmail.com", "12345678", "ocasional5", "01234567", "Uruguay"));
         }
 
         private void PrecargaAviones()
@@ -459,8 +462,6 @@ namespace Dominio
             AltaPasajes(new Pasaje(BuscarVuelo("EK5000"), new DateTime(2025, 06, 7), BuscarCliente("ocasional2@gmail.com"), Equipaje.Bodega));
             AltaPasajes(new Pasaje(BuscarVuelo("AA4321"), new DateTime(2025, 06, 8), BuscarCliente("ocasional3@gmail.com"), Equipaje.Light));
             AltaPasajes(new Pasaje(BuscarVuelo("QF9988"), new DateTime(2025, 06, 9), BuscarCliente("ocasional4@gmail.com"), Equipaje.Cabina));
-            
-
         }
 
 
@@ -478,6 +479,13 @@ namespace Dominio
 
             clientes.Sort();
             return clientes;
+        }
+
+        public List<Vuelo> MostrarVuelos()
+        {
+            List<Vuelo> vuelos = _vuelos;
+
+            return vuelos;
         }
 
         //Mostrar vuelos determinados

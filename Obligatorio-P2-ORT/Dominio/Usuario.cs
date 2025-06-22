@@ -26,7 +26,7 @@ namespace Dominio
         {
             if (!TieneArroba(_correoElectronico))
             {
-                throw new Exception("El correo electrónico debe contener un arroba");
+                throw new Exception("El correo electronico debe contener un arroba");
             }
             if (_contrasenia.Length < 8)
             {

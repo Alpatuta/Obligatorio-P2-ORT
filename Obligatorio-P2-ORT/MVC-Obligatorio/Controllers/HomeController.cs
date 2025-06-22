@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Dominio;
 using Microsoft.AspNetCore.Mvc;
 using MVC_Obligatorio.Models;
 
@@ -6,6 +7,7 @@ namespace MVC_Obligatorio.Controllers;
 
 public class HomeController : Controller
 {
+    Sistema miSistema = Sistema.Instancia;
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -13,19 +15,4 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
 }
