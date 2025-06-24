@@ -58,3 +58,15 @@ C:\Users\59892\Source\Repos\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\De
 C:\Users\59892\Source\Repos\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\refint\Dominio.dll
 C:\Users\59892\Source\Repos\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.pdb
 C:\Users\59892\Source\Repos\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\ref\Dominio.dll
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\bin\Debug\net8.0\Dominio.deps.json
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\bin\Debug\net8.0\Dominio.dll
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\bin\Debug\net8.0\Dominio.pdb
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.sourcelink.json
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.dll
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\Dominio.pdb
+C:\Users\alumnoFI\Desktop\obp1\Obligatorio-P2-ORT\Obligatorio-P2-ORT\Dominio\obj\Debug\net8.0\ref\Dominio.dll

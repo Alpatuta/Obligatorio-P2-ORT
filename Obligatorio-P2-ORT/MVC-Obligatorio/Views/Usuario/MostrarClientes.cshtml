@@ -19,9 +19,9 @@
         @foreach (Dominio.Cliente cliente in Model)
         {
             <tr>
-                <td>@cliente.Nombre</td>
-                <td>@cliente.Cedula</td>
-                <td>@cliente.Nacionalidad</td>
+                <td style="padding:5px">@cliente.Nombre</td>
+                <td style="padding:5px">@cliente.Cedula</td>
+                <td style="padding:5px">@cliente.Nacionalidad</td>
                 
                     @if (cliente is Dominio.Premium premium)
                     {

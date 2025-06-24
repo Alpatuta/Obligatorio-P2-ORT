@@ -10,6 +10,7 @@ namespace Dominio
     {
         private string _correoElectronico;
         private string _contrasenia;
+        private string _rol;
         
 
         public Usuario(string correoElectronico, string contrasenia)
@@ -21,6 +22,18 @@ namespace Dominio
         public Usuario() { }
 
         public string Mail { get {  return _correoElectronico; } set { _correoElectronico = value; } }
+
+        public string Contrasenia
+        {
+            get { return _contrasenia; }
+            set { _contrasenia = value; }
+        }
+
+        public string Rol
+        {
+            get { return _rol; }
+            set { _rol = value; }
+        }
 
         public void ValidarUsuario()
         {

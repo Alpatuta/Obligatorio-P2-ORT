@@ -14,6 +14,7 @@ namespace Dominio
             : base (correoElectronico, contrasenia)
         {
             _apodo = apodo;
+            Rol = "Administrador";
         }
 
         public void ValidarAdmin()
