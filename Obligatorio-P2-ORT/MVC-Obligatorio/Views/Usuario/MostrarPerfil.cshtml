@@ -1,18 +1,51 @@
-﻿
+﻿@model Dominio.Cliente
 @{
     ViewData["Title"] = "MostrarPerfil";
 }
 
 <h1>MostrarPerfil</h1>
 @TempData["Mensaje"]
-<table>
-    <thead>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </thead>
-    <tbody>
+@if (Model != null)
+{
 
-    </tbody>
-</table>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Cedula</th>
+            <th>Nacionalidad</th>
+            @if (Model is Dominio.Premium)
+            {
+            <th>Puntos</th>
+            }
+            @if (Model is Dominio.Ocasional)
+            {
+            <th>Tipo</th>
+            }
+        </thead>
+        <tbody>
+        
+                <tr>
+                    <td style="padding:5px">@Model.Nombre</td>
+                    <td style="padding:5px">@Model.Cedula</td>
+                    <td style="padding:5px">@Model.Nacionalidad</td>
+
+                    @if ( Model is Dominio.Premium premium)
+                    {
+                        <td>
+                            @premium.Puntos
+                        </td>
+                        
+                    }
+
+                    @if (Model is Dominio.Ocasional ocasional)
+                    {
+                        <td>
+                            @ocasional.ToString()
+                        </td>
+                    }
+                </tr>
+            
+        </tbody>
+    </table>
+}
+@ViewBag.Mensaje

@@ -37,7 +37,7 @@ public class HomeController : Controller
                     HttpContext.Session.GetString("mail");
                     return RedirectToAction("MostrarPerfil", "Usuario");
                 }
-               
+
             }
             else
             {

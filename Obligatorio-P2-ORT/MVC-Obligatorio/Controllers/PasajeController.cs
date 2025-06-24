@@ -13,9 +13,17 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult VerPasaje()
         {
-            IEnumerable<Pasaje> pasajes = miSistema.PasajesEntreFechas(DateTime.MinValue, DateTime.MaxValue);
-            
-            return View(pasajes);
+            try
+            {
+                IEnumerable<Pasaje> pasajes = miSistema.PasajesEntreFechas(DateTime.MinValue, DateTime.MaxValue);
+
+                return View(pasajes);
+            }catch (Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+            }
+
+            return View();
         }
 
         public IActionResult PasajesComprados()

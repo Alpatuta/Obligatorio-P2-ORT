@@ -1,71 +1,73 @@
-﻿
+﻿@model IEnumerable<Dominio.Cliente>
 @{
     ViewData["Title"] = "MostrarClientes";
 }
 
 <h1>MostrarClientes</h1>
 
-<table>
-    <thead>
-        <th>Nombre</th>
-        <th>Cedula</th> 
-        <th>Nacionalidad</th>
-        <th>Puntos</th>
-        <th>Editar Puntos</th>
-        <th>Ocasional</th>
-        <th>Cambiar elegibilidad</th>
-    </thead>
-    <tbody>
-        @foreach (Dominio.Cliente cliente in Model)
-        {
-            <tr>
-                <td style="padding:5px">@cliente.Nombre</td>
-                <td style="padding:5px">@cliente.Cedula</td>
-                <td style="padding:5px">@cliente.Nacionalidad</td>
-                
+@if (Model != null && Model.Count() > 0)
+{
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Cedula</th> 
+            <th>Nacionalidad</th>
+            <th>Puntos</th>
+            <th>Editar Puntos</th>
+            <th>Ocasional</th>
+            <th>Cambiar elegibilidad</th>
+        </thead>
+        <tbody>
+            @foreach (Dominio.Cliente cliente in Model)
+            {
+                <tr>
+                    <td style="padding:5px">@cliente.Nombre</td>
+                    <td style="padding:5px">@cliente.Cedula</td>
+                    <td style="padding:5px">@cliente.Nacionalidad</td>
+
                     @if (cliente is Dominio.Premium premium)
                     {
-                    <td>
-                        @premium.Puntos
-                    </td>
-                    <td>
-                        <form asp-action="EditarPuntos" asp-controller="Usuario" method="post" style="display:inline";>
-                            <input type="hidden" name="mail" value="@premium.Mail"/>
-                            <input type="number" name="puntos" min="0"/>
-                            <button type="submit">Guardar</button>
-                            
-                        </form>
-                    </td>
+                        <td>
+                            @premium.Puntos
+                        </td>
+                        <td>
+                            <form asp-action="EditarPuntos" asp-controller="Usuario" method="post" style="display:inline";>
+                                <input type="hidden" name="mail" value="@premium.Mail"/>
+                                <input type="number" name="puntos" min="0"/>
+                                <button type="submit">Guardar</button>
+
+                            </form>
+                        </td>
                     }
-                
-                
+
+
                     @if (cliente is Dominio.Ocasional ocasional)
                     {
                         <td></td>
-                    <td></td>
-                    <td>
-                        @ocasional.ToString()
-                    </td>
-                    <td>
-                        <form asp-action="EditarElegible" asp-controller="Usuario" method="post" style="display:inline" ;>
-                            <input type="hidden" name="mail" value="@ocasional.Mail" />
+                        <td></td>
+                        <td>
+                            @ocasional.ToString()
+                        </td>
+                        <td>
+                            <form asp-action="EditarElegible" asp-controller="Usuario" method="post" style="display:inline" ;>
+                                <input type="hidden" name="mail" value="@ocasional.Mail" />
 
-                            <label>
-                                <input type="radio" name="EsElegible" value="true" /> Si
-                            </label>
+                                <label>
+                                    <input type="radio" name="EsElegible" value="true" /> Si
+                                </label>
 
-                            <label>
-                                <input type="radio" name="EsElegible" value="false" /> No
-                            </label>
+                                <label>
+                                    <input type="radio" name="EsElegible" value="false" /> No
+                                </label>
 
-                            <button type="submit">Guardar</button>
-                        </form>
-                    </td>
+                                <button type="submit">Guardar</button>
+                            </form>
+                        </td>
                     }
-                
-            </tr>
-        }
-    </tbody>
-</table>
 
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 @ViewBag.Mensaje

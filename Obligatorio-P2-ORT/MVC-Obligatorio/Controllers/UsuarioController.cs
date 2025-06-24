@@ -13,18 +13,33 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult MostrarClientes()
         {
-            List<Cliente> clientes = miSistema.MostrarClientes();
+            try
+            {
+				IEnumerable<Cliente> clientes = miSistema.MostrarClientes();
 
-            return View(clientes);
+				return View(clientes);
+			}catch (Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+            }
+
+            return View();  
         }
 
         public IActionResult MostrarPerfil()
         {
-            string mail = HttpContext.Session.GetString("mail");
-            Cliente cliente = miSistema.BuscarCliente(mail);
+            try
+            {
+				string mail = HttpContext.Session.GetString("mail");
+				Cliente cliente = miSistema.BuscarCliente(mail);
 
-            return View(cliente);
+				return View(cliente);
+			}catch(Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+            }
 
+            return View();  
         }
 
         public IActionResult EditarPuntos()

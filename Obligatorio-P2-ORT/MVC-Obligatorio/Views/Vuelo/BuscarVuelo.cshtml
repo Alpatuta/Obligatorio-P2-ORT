@@ -40,8 +40,7 @@
                         <form asp-action="ComprarPasaje" asp-controller="Vuelo" method="post" style="display:inline" ;>
                             <input type="hidden" name="nroVuelo" value="@v.NumeroVuelo" />
                             <input type="date" name="fecha" />
-                            <!--EL EMAIL ESTA HARCODE PORQUE ESO DEPENDE LA SESSION DEL LOGUIN-->
-                            <input type="hidden" name="mail" value="ocasional1@gmail.com" />
+                            <input type="hidden" name="mail" />
                             <select name="equipaje">
                                 <option value="XXX">Seleccione...</option>
                                 <option value="Light">Light</option>

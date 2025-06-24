@@ -9,7 +9,6 @@
 {
     <table>
     <thead>
-    <th style="padding:5px">Id De Pasaje</th>
     <th style="padding:5px">Fecha del Vuelo</th>
     <th style="padding:5px">Numero de Vuelo</th>
     <th style="padding:5px">Nombre Pasajero</th>
@@ -20,7 +19,6 @@
         @foreach (Dominio.Pasaje pasaje in Model)
         {
             <tr>
-                <td style="padding:5px">@pasaje.IdPasaje</td>
                 <td style="padding:5px">@pasaje.Fecha</td>
                 <td style="padding:5px">@pasaje.Vuelo.NumeroVuelo</td>
                 <td style="padding:5px">@pasaje.Pasajero.Nombre</td>
@@ -29,5 +27,9 @@
             </tr>
         }
     </tbody>
-</table>
+    </table>
+}
+else
+{
+    @ViewBag.Mensaje
 }

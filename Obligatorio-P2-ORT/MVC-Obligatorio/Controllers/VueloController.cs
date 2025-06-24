@@ -13,8 +13,18 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult MostrarVuelos()
         {
-            List<Vuelo> vuelos = miSistema.MostrarVuelos();
-            return View(vuelos);  
+            try
+            {
+                IEnumerable<Vuelo> vuelos = miSistema.MostrarVuelos();
+                return View(vuelos);
+
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+            }
+
+            return View();
         }
 
         public IActionResult ComprarPasaje()
@@ -24,10 +34,11 @@ namespace MVC_Obligatorio.Controllers
 
         [HttpPost]
 
-        public IActionResult ComprarPasaje(string nroVuelo, DateTime fecha, string mail, Equipaje equipaje)
+        public IActionResult ComprarPasaje(string nroVuelo, DateTime fecha, Equipaje equipaje)
         {
             try
             {
+                string mail = HttpContext.Session.GetString("mail");
                 Vuelo vuelo = miSistema.BuscarVuelo(nroVuelo);
                 Cliente pasajero = miSistema.BuscarCliente(mail);
                 Pasaje pasaje = new Pasaje(vuelo, fecha, pasajero, equipaje);
@@ -53,7 +64,7 @@ namespace MVC_Obligatorio.Controllers
         {
             try
             {
-                List<Vuelo> vuelos = miSistema.ListadoVuelosIATA(codIata);
+                IEnumerable<Vuelo> vuelos = miSistema.ListadoVuelosIATA(codIata);
                 return View(vuelos);
             }catch (Exception ex)
             {

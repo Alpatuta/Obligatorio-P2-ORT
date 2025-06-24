@@ -254,6 +254,7 @@ namespace Dominio
                 }
             }
 
+            pasajes.Sort(new PasajesPorPrecio());
             return pasajes;
         }
 
