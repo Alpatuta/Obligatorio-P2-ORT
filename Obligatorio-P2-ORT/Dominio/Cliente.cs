@@ -13,12 +13,13 @@ namespace Dominio
         private string _documento;
         private string _nacionalidad;
 
-        public Cliente(string correoElectronico, string contrasenia, string nombre, string documento, string nacionalidad)
+        public Cliente(string correoElectronico, string contrasenia,string nombre, string documento, string nacionalidad)
             : base (correoElectronico, contrasenia)
         {
             _nombre = nombre;
             _documento = documento;
             _nacionalidad = nacionalidad;
+            Rol = "Cliente";
         }
 
         public Cliente() : base() { }

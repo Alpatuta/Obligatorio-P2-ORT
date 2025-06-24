@@ -32,7 +32,8 @@ namespace MVC_Obligatorio.Controllers
                 Cliente pasajero = miSistema.BuscarCliente(mail);
                 Pasaje pasaje = new Pasaje(vuelo, fecha, pasajero, equipaje);
                 miSistema.AltaPasajes(pasaje);
-                return RedirectToAction(nameof(MostrarVuelos));
+                TempData["Mensaje"] = "Compra realizada con exito";
+                return RedirectToAction("PasajesComprados" ,"Pasaje");
             }
             catch (Exception ex)
             {

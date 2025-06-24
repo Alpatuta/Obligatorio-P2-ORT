@@ -13,9 +13,35 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult VerPasaje()
         {
-            List<Pasaje> pasajes = miSistema.PasajesEntreFechas(DateTime.MinValue, DateTime.MaxValue);
+            IEnumerable<Pasaje> pasajes = miSistema.PasajesEntreFechas(DateTime.MinValue, DateTime.MaxValue);
             
             return View(pasajes);
+        }
+
+        public IActionResult PasajesComprados()
+        {
+            try
+            {
+                Cliente cliente = null;
+                cliente = miSistema.BuscarCliente(HttpContext.Session.GetString("mail"));
+                if (cliente != null)
+                {
+                    IEnumerable<Pasaje> pasajes = miSistema.BuscarPasajesPorCliente(cliente.Mail);
+
+                    if (pasajes != null && pasajes.Count() > 0)
+                    {
+                        return View(pasajes);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                ViewBag.Mensaje = e.Message;
+            }
+
+            
+
+            return View();
         }
     }
 }

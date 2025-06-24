@@ -242,6 +242,21 @@ namespace Dominio
             return usuario;
         }
 
+        public List<Pasaje> BuscarPasajesPorCliente(string mail)
+        {
+            List<Pasaje> pasajes = new List<Pasaje>();
+
+            foreach (Pasaje p in Pasajes)
+            {
+                if (p.Pasajero.Mail == mail)
+                {
+                    pasajes.Add(p);
+                }
+            }
+
+            return pasajes;
+        }
+
         public Cliente BuscarCliente(string mail)
         {
             Cliente cliente = null;
@@ -302,24 +317,24 @@ namespace Dominio
         private void PrecargaUsuariosAdmin()
         {
             AltaUsuarioAdministrador(new Administrador("admin1@gmail.com", "12345678", "admin1"));
-            AltaUsuarioAdministrador(new Administrador("admin2@gmail.com", "12345678", "admin2"));
+            AltaUsuarioAdministrador(new Administrador("admin2@gmail.com", "12345678",  "admin2"));
         }
 
         private void PrecargaUsuarioClientePremium()
         {
-            AltaUsuarioClientePremium(new Premium("premium1@gmail.com", "12345678", "premium1", "56785678", "Uruguay"));
-            AltaUsuarioClientePremium(new Premium("premium2@gmail.com", "12345678", "premium2", "23456789", "España"));
-            AltaUsuarioClientePremium(new Premium("premium3@gmail.com", "12345678", "premium3", "34567890", "España"));
-            AltaUsuarioClientePremium(new Premium("premium4@gmail.com", "12345678", "premium4", "45678901", "Japon"));
-            AltaUsuarioClientePremium(new Premium("premium5@gmail.com", "12345678", "premium5", "56789012", "Uruguay"));
+            AltaUsuarioClientePremium(new Premium("premium1@gmail.com", "12345678",  "premium1", "56785678", "Uruguay"));
+            AltaUsuarioClientePremium(new Premium("premium2@gmail.com", "12345678","premium2", "23456789", "España"));
+            AltaUsuarioClientePremium(new Premium("premium3@gmail.com", "12345678",  "premium3", "34567890", "España"));
+            AltaUsuarioClientePremium(new Premium("premium4@gmail.com", "12345678","premium4", "45678901", "Japon"));
+            AltaUsuarioClientePremium(new Premium("premium5@gmail.com", "12345678",  "premium5", "56789012", "Uruguay"));
         }
 
         private void PrecargaUsuarioClienteOcasional()
         {
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional1@gmail.com", "12345678", "ocasional1", "67890123", "Uruguay"));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional2@gmail.com", "12345678", "ocasional2", "78901234", "Uruguay"));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional3@gmail.com", "12345678", "ocasional3", "89012345", "Uruguay"));
-            AltaUsuarioClienteOcasional(new Ocasional("ocasional4@gmail.com", "12345678", "ocasional4", "90123456", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional1@gmail.com", "12345678",  "ocasional1", "67890123", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional2@gmail.com", "12345678",  "ocasional2", "78901234", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional3@gmail.com", "12345678",  "ocasional3", "89012345", "Uruguay"));
+            AltaUsuarioClienteOcasional(new Ocasional("ocasional4@gmail.com", "12345678",  "ocasional4", "90123456", "Uruguay"));
             AltaUsuarioClienteOcasional(new Ocasional("ocasional5@gmail.com", "12345678", "ocasional5", "01234567", "Uruguay"));
         }
 
@@ -559,6 +574,26 @@ namespace Dominio
             Ocasional ocasional = BuscarOcasional(mail);
 
             ocasional.EsElegible = esElegible;
+        }
+
+        public string Login(string mail, string contrasenia)
+        {
+            bool existe = false;
+            string rol = "";
+            int i = 0;
+
+            while (i < Usuarios.Count && !existe)
+            {
+                if (Usuarios[i].Mail.Equals(mail) && Usuarios[i].Contrasenia.Equals(contrasenia))
+                {
+                    existe = true;
+                    rol = Usuarios[i].Rol;
+                }
+
+                i++;
+            }
+
+            return rol;
         }
     }
 }

@@ -18,6 +18,15 @@ namespace MVC_Obligatorio.Controllers
             return View(clientes);
         }
 
+        public IActionResult MostrarPerfil()
+        {
+            string mail = HttpContext.Session.GetString("mail");
+            Cliente cliente = miSistema.BuscarCliente(mail);
+
+            return View(cliente);
+
+        }
+
         public IActionResult EditarPuntos()
         {
             return View();
@@ -30,7 +39,6 @@ namespace MVC_Obligatorio.Controllers
             try
             {
                 miSistema.EditarPuntos (mail, puntos);
-
                 return RedirectToAction(nameof(MostrarClientes));
             }   catch (Exception ex)
             {
@@ -51,7 +59,6 @@ namespace MVC_Obligatorio.Controllers
             try
             {
                 miSistema.EditarElegible(mail, esElegible);
-
                 return RedirectToAction(nameof(MostrarClientes));
             }
             catch (Exception ex)
@@ -74,6 +81,11 @@ namespace MVC_Obligatorio.Controllers
             {
                 Ocasional ocasional = new Ocasional(correoElectronico, contrasenia, nombre, documento, nacionalidad);
                 miSistema.AltaUsuarioClienteOcasional(ocasional);
+                HttpContext.Session.SetString("rol", miSistema.Login(correoElectronico, contrasenia));
+                HttpContext.Session.SetString("mail", correoElectronico);
+                TempData["Mensaje"] = "Registro exitoso";
+                return RedirectToAction(nameof(MostrarPerfil));
+                
             }
             catch (Exception ex)
             {

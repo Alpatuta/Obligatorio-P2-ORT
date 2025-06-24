@@ -11,9 +11,8 @@ namespace Dominio
         private bool _esElegible;
 
         public Ocasional(string correoElectronico, string contrasenia, string nombre, string documento, string nacionalidad)
-            : base(correoElectronico, contrasenia, nombre, documento, nacionalidad)
+            : base(correoElectronico, contrasenia,  nombre, documento, nacionalidad)
         {
-            
             _esElegible = esElegible();
         }
 

@@ -1,21 +1,22 @@
-﻿
+﻿@model IEnumerable<Dominio.Pasaje>
 @{
-    ViewData["Title"] = "VerPasaje";
+    ViewData["Title"] = "PasajesComprados";
 }
 
-<h1>VerPasaje</h1>
+<h1>PasajesComprados</h1>
+@TempData["Mensaje"]
 @if (Model != null && Model.Count() > 0)
 {
     <table>
-        <thead>
-        <th style="padding:5px">Id De Pasaje</th>
-        <th style="padding:5px">Fecha del Vuelo</th>
-        <th style="padding:5px">Numero de Vuelo</th>
-        <th style="padding:5px">Nombre Pasajero</th>
-        <th style="padding:5px">Equipaje</th>
-        <th style="padding:5px">Precio</th>
-        </thead>
-        <tbody>
+    <thead>
+    <th style="padding:5px">Id De Pasaje</th>
+    <th style="padding:5px">Fecha del Vuelo</th>
+    <th style="padding:5px">Numero de Vuelo</th>
+    <th style="padding:5px">Nombre Pasajero</th>
+    <th style="padding:5px">Equipaje</th>
+    <th style="padding:5px">Precio</th>
+    </thead>
+    <tbody>
         @foreach (Dominio.Pasaje pasaje in Model)
         {
             <tr>
@@ -27,6 +28,6 @@
                 <td style="padding:5px">@pasaje.Precio</td>
             </tr>
         }
-        </tbody>
-    </table>
+    </tbody>
+</table>
 }

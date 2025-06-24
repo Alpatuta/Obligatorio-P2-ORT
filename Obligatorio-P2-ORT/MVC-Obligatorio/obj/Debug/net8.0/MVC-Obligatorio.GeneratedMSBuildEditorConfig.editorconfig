@@ -38,8 +38,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lenovo/OneDrive/Escritorio/Facultad/Semestre-2/Obligatorio-P2-ORT/Obligatorio-P2-ORT/MVC-Obligatorio/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/OneDrive/Escritorio/Facultad/Semestre-2/Obligatorio-P2-ORT/Obligatorio-P2-ORT/MVC-Obligatorio/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/OneDrive/Escritorio/Facultad/Semestre-2/Obligatorio-P2-ORT/Obligatorio-P2-ORT/MVC-Obligatorio/Views/Pasaje/PasajesComprados.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplXFBhc2FqZXNDb21wcmFkb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/OneDrive/Escritorio/Facultad/Semestre-2/Obligatorio-P2-ORT/Obligatorio-P2-ORT/MVC-Obligatorio/Views/Pasaje/VerPasaje.cshtml]
@@ -60,6 +68,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Lenovo/OneDrive/Escritorio/Facultad/Semestre-2/Obligatorio-P2-ORT/Obligatorio-P2-ORT/MVC-Obligatorio/Views/Usuario/MostrarClientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xNb3N0cmFyQ2xpZW50ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/OneDrive/Escritorio/Facultad/Semestre-2/Obligatorio-P2-ORT/Obligatorio-P2-ORT/MVC-Obligatorio/Views/Usuario/MostrarPerfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xNb3N0cmFyUGVyZmlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lenovo/OneDrive/Escritorio/Facultad/Semestre-2/Obligatorio-P2-ORT/Obligatorio-P2-ORT/MVC-Obligatorio/Views/Usuario/RegistrarCliOcasional.cshtml]
