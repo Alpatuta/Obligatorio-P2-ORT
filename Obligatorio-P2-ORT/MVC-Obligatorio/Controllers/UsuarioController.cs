@@ -13,38 +13,59 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult MostrarClientes()
         {
-            try
+            if (HttpContext.Session.GetString("rol") != null)
             {
-				IEnumerable<Cliente> clientes = miSistema.MostrarClientes();
+                if (HttpContext.Session.GetString("rol").Equals("Administrador"))
+                {
+                    try
+                    {
+                        IEnumerable<Cliente> clientes = miSistema.MostrarClientes();
 
-				return View(clientes);
-			}catch (Exception ex)
-            {
-                ViewBag.Mensaje = ex.Message;
+                        return View(clientes);
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Mensaje = ex.Message;
+                    }
+                }
             }
 
-            return View();  
+            return RedirectToAction("Login", "Home");
         }
 
         public IActionResult MostrarPerfil()
         {
-            try
+            if (HttpContext.Session.GetString("rol") != null)
             {
-				string mail = HttpContext.Session.GetString("mail");
-				Cliente cliente = miSistema.BuscarCliente(mail);
+                if (HttpContext.Session.GetString("rol").Equals("Cliente"))
+                {
+                    try
+                    {
+                        string mail = HttpContext.Session.GetString("mail");
+                        Cliente cliente = miSistema.BuscarCliente(mail);
 
-				return View(cliente);
-			}catch(Exception ex)
-            {
-                ViewBag.Mensaje = ex.Message;
+                        return View(cliente);
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Mensaje = ex.Message;
+                    }
+                }
             }
-
-            return View();  
+            
+            return RedirectToAction("Login", "Home");  
         }
 
         public IActionResult EditarPuntos()
         {
-            return View();
+            if (HttpContext.Session.GetString("rol") != null)
+            {
+                if (HttpContext.Session.GetString("rol").Equals("Administrador"))
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("Login", "Home");
         }
 
         [HttpPost]
@@ -64,7 +85,14 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult EditarElegible()
         {
-            return View();
+            if (HttpContext.Session.GetString("rol") != null)
+            {
+                if (HttpContext.Session.GetString("rol").Equals("Administrador"))
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("Login", "Home");
         }
 
         [HttpPost]

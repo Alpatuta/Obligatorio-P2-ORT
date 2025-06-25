@@ -13,23 +13,35 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult MostrarVuelos()
         {
-            try
+            if (HttpContext.Session.GetString("rol") != null)
             {
-                IEnumerable<Vuelo> vuelos = miSistema.MostrarVuelos();
-                return View(vuelos);
+                if (HttpContext.Session.GetString("rol").Equals("Cliente"))
+                {
+                    try
+                    {
+                        IEnumerable<Vuelo> vuelos = miSistema.MostrarVuelos();
+                        return View(vuelos);
 
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Mensaje = ex.Message;
+                    }
+                }
             }
-            catch (Exception ex)
-            {
-                ViewBag.Mensaje = ex.Message;
-            }
-
-            return View();
+            return RedirectToAction("Login", "Home");
         }
 
         public IActionResult ComprarPasaje()
         {
-            return View();
+            if (HttpContext.Session.GetString("rol") != null)
+            {
+                if (HttpContext.Session.GetString("rol").Equals("Cliente"))
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("Login", "Home");
         }
 
         [HttpPost]
@@ -55,7 +67,14 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult BuscarVuelo()
         {
-            return View();
+            if (HttpContext.Session.GetString("rol") != null)
+            {
+                if (HttpContext.Session.GetString("rol").Equals("Cliente"))
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("Login", "Home");
         }
 
         [HttpPost]

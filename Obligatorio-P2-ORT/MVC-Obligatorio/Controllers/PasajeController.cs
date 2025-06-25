@@ -37,28 +37,31 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult PasajesComprados()
         {
-            try
+            if (HttpContext.Session.GetString("rol") != null)
             {
-                Cliente cliente = null;
-                cliente = miSistema.BuscarCliente(HttpContext.Session.GetString("mail"));
-                if (cliente != null)
+                if (HttpContext.Session.GetString("rol").Equals("Cliente"))
                 {
-                    IEnumerable<Pasaje> pasajes = miSistema.BuscarPasajesPorCliente(cliente.Mail);
-
-                    if (pasajes != null && pasajes.Count() > 0)
+                    try
                     {
-                        return View(pasajes);
+                        Cliente cliente = null;
+                        cliente = miSistema.BuscarCliente(HttpContext.Session.GetString("mail"));
+                        if (cliente != null)
+                        {
+                            IEnumerable<Pasaje> pasajes = miSistema.BuscarPasajesPorCliente(cliente.Mail);
+
+                            if (pasajes != null && pasajes.Count() > 0)
+                            {
+                                return View(pasajes);
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        ViewBag.Mensaje = e.Message;
                     }
                 }
             }
-            catch (Exception e)
-            {
-                ViewBag.Mensaje = e.Message;
-            }
-
-            
-
-            return View();
+            return RedirectToAction("Login", "Home");
         }
     }
 }
