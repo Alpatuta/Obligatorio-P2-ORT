@@ -6,24 +6,33 @@ namespace MVC_Obligatorio.Controllers
     public class PasajeController : Controller
     {
         private Sistema miSistema = Sistema.Instancia;
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         public IActionResult VerPasaje()
         {
-            try
+            if (HttpContext.Session.GetString("rol") != null)
             {
-                IEnumerable<Pasaje> pasajes = miSistema.PasajesEntreFechas(DateTime.MinValue, DateTime.MaxValue);
+                if (HttpContext.Session.GetString("rol").Equals("Administrador"))
+                {
+                    try
+                    {
+                        IEnumerable<Pasaje> pasajes = miSistema.PasajesEntreFechas(DateTime.MinValue, DateTime.MaxValue);
 
-                return View(pasajes);
-            }catch (Exception ex)
-            {
-                ViewBag.Mensaje = ex.Message;
+                        return View(pasajes);
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Mensaje = ex.Message;
+                    }
+
+                }
+                if (HttpContext.Session.GetString("rol").Equals("Cliente"))
+                {
+                    return RedirectToAction("MostrarPerfil", "Usuario");
+                }
+
             }
 
-            return View();
+            return RedirectToAction("Login", "Home");
         }
 
         public IActionResult PasajesComprados()

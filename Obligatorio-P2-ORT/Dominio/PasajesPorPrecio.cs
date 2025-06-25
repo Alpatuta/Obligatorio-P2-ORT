@@ -15,7 +15,7 @@ namespace Dominio
                 return 0;
             }
 
-            return y.CostoPasaje().CompareTo(x.CostoPasaje()) * -1;
+            return y.CostoPasaje().CompareTo(x.CostoPasaje());
         }
     }
 }
