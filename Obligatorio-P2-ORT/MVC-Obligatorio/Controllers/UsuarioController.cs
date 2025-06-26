@@ -62,7 +62,14 @@ namespace MVC_Obligatorio.Controllers
             {
                 if (HttpContext.Session.GetString("rol").Equals("Administrador"))
                 {
-                    return View();
+                    try
+                    {
+                        return View();
+                    } 
+                    catch (Exception ex)
+                    {
+                        ViewBag.Mensaje = ex.Message;
+                    }
                 }
             }
             return RedirectToAction("Login", "Home");
@@ -88,8 +95,15 @@ namespace MVC_Obligatorio.Controllers
             if (HttpContext.Session.GetString("rol") != null)
             {
                 if (HttpContext.Session.GetString("rol").Equals("Administrador"))
-                {
-                    return View();
+                { 
+                    try
+                    {
+                        return View();
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Mensaje = ex.Message;
+                    }
                 }
             }
             return RedirectToAction("Login", "Home");
@@ -113,6 +127,14 @@ namespace MVC_Obligatorio.Controllers
 
         public IActionResult RegistrarCliOcasional ()
         {
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Mensaje = ex.Message;
+            }
             return View();
         }
 
