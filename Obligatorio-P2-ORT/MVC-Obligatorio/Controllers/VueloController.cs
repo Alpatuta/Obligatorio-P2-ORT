@@ -38,7 +38,14 @@ namespace MVC_Obligatorio.Controllers
             {
                 if (HttpContext.Session.GetString("rol").Equals("Cliente"))
                 {
-                    return View();
+                    try
+                    {
+                        return View();
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Mensaje = ex.Message;
+                    }
                 }
             }
             return RedirectToAction("Login", "Home");
@@ -71,7 +78,14 @@ namespace MVC_Obligatorio.Controllers
             {
                 if (HttpContext.Session.GetString("rol").Equals("Cliente"))
                 {
-                    return View();
+                    try
+                    {
+                        return View();
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Mensaje = ex.Message;
+                    }
                 }
             }
             return RedirectToAction("Login", "Home");

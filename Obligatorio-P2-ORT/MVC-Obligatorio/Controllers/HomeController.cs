@@ -54,10 +54,15 @@ public class HomeController : Controller
 
     public IActionResult Logout()
     {
-        HttpContext.Session.Clear();
-        return RedirectToAction("Login");
+        try
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+        }
+        catch (Exception ex)
+        {
+            ViewBag.Mensaje = ex.Message;
+        }
+        return View();
     }
-
-
-
 }
